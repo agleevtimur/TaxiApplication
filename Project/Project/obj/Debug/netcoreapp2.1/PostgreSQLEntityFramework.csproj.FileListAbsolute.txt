@@ -1,0 +1,11 @@
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\bin\Debug\netcoreapp2.1\PostgreSQLEntityFramework.deps.json
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\bin\Debug\netcoreapp2.1\PostgreSQLEntityFramework.runtimeconfig.json
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\bin\Debug\netcoreapp2.1\PostgreSQLEntityFramework.runtimeconfig.dev.json
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\bin\Debug\netcoreapp2.1\PostgreSQLEntityFramework.dll
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\obj\Debug\netcoreapp2.1\PostgreSQLEntityFramework.csprojAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\obj\Debug\netcoreapp2.1\PostgreSQLEntityFramework.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\obj\Debug\netcoreapp2.1\PostgreSQLEntityFramework.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\obj\Debug\netcoreapp2.1\PostgreSQLEntityFramework.AssemblyInfo.cs
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\bin\Debug\netcoreapp2.1\PostgreSQLEntityFramework.pdb
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\obj\Debug\netcoreapp2.1\PostgreSQLEntityFramework.dll
+C:\Users\Дмитрий\source\repos\PostgreSQLEntityFramework\PostgreSQLEntityFramework\obj\Debug\netcoreapp2.1\PostgreSQLEntityFramework.pdb
