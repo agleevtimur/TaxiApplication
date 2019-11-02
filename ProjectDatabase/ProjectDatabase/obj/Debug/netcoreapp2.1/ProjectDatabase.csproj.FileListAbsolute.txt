@@ -1,0 +1,8 @@
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\bin\Debug\netcoreapp2.1\ProjectDatabase.deps.json
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\bin\Debug\netcoreapp2.1\ProjectDatabase.runtimeconfig.json
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\bin\Debug\netcoreapp2.1\ProjectDatabase.runtimeconfig.dev.json
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\bin\Debug\netcoreapp2.1\ProjectDatabase.dll
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\obj\Debug\netcoreapp2.1\ProjectDatabase.csprojAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\obj\Debug\netcoreapp2.1\ProjectDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\obj\Debug\netcoreapp2.1\ProjectDatabase.AssemblyInfoInputs.cache
+C:\Users\Дмитрий\source\repos\ProjectDatabase\ProjectDatabase\obj\Debug\netcoreapp2.1\ProjectDatabase.AssemblyInfo.cs
