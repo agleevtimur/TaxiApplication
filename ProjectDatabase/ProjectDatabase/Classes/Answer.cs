@@ -4,13 +4,14 @@ using System.Text;
 
 namespace ProjectDatabase.Classes
 {
-    // ответы пользователей
-    public class Answers
+    // ответ пользователей
+    public class Answer
     {
         public int Id { get; set; }
         public string DepartureTime { get; set; }
         public string AnswerOfUser { get; set; }
-        public int RequestId { get; set; }
-        public Requests Requests { get; set; }
+        public string RequestTime { get; set; }
+        public int CountOfPeople { get; set; }
+        public Request Request { get; set; }
     }
 }

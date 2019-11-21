@@ -5,10 +5,11 @@ using System.Text;
 namespace ProjectDatabase.Classes
 {
     // история местоположений
-    public class HistoryOfLocations
+    public class HistoryOfLocation
     {
-        public string Locations { get; set; }
+        public string NameOfPoint { get; set; }
         public int CountOfDepartures { get; set; }
         public int CountOfArrivals { get; set; }
+        public Location Location { get; set; }
     }
 }

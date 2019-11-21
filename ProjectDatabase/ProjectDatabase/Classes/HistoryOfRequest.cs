@@ -5,8 +5,8 @@ using System.Text;
 namespace ProjectDatabase.Classes
 {
     // история запросов
-    public class HistoryOfRequests
+    public class HistoryOfRequest
     {
-        public List<Requests> History { get; set; }
+        public List<Request> History { get; set; }
     }
 }
