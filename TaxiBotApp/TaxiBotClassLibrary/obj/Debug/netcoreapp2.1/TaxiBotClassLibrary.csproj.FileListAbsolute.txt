@@ -1,0 +1,8 @@
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Debug\netcoreapp2.1\TaxiBotClassLibrary.csprojAssemblyReference.cache
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Debug\netcoreapp2.1\TaxiBotClassLibrary.AssemblyInfoInputs.cache
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Debug\netcoreapp2.1\TaxiBotClassLibrary.AssemblyInfo.cs
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Debug\netcoreapp2.1\TaxiBotClassLibrary.deps.json
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Debug\netcoreapp2.1\TaxiBotClassLibrary.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Debug\netcoreapp2.1\TaxiBotClassLibrary.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Debug\netcoreapp2.1\TaxiBotClassLibrary.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Debug\netcoreapp2.1\TaxiBotClassLibrary.pdb
