@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace TaxiBotApp.Models.Commands
+namespace TaxiBotClassLibrary.Commands
 {
     public class HelloCommand : Command
     {
-        public override string Name => "hello";
+        public override string Name => "/hello";
 
         public override async void Execute(Message message, TelegramBotClient client)
         {
             var chatId = message.Chat.Id;
             var messageId = message.MessageId;
-            await client.SendTextMessageAsync(chatId, "Ждите . . .", replyToMessageId: messageId);
+            await client.SendTextMessageAsync(chatId, message.Type.ToString(), replyToMessageId: messageId);
         }
     }
 }
