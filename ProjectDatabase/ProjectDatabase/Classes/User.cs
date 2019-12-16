@@ -11,7 +11,5 @@ namespace ProjectDatabase.Classes
         public string Nickname { get; set; }
         public string Phone { get; set; }
         public int CountOfTrip { get; set; }
-        public int CountOfFailures { get; set; }
-        public Request Request { get; set; }
     }
 }
