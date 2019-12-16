@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace TaxiBotApp.Models.Commands
+namespace TaxiBotClassLibrary.Commands
 {
     public abstract class Command
     {
@@ -13,7 +13,7 @@ namespace TaxiBotApp.Models.Commands
         public abstract void Execute(Message message, TelegramBotClient client);
         public bool Contains(string command)
         {
-            return command.Contains(Name);
+            return command.StartsWith(Name);
         }
 
     }

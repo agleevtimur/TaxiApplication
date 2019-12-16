@@ -17,3 +17,4 @@ C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotApp\obj\Release\netcoreapp2
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotApp\bin\Release\netcoreapp2.1\TaxiBotClassLibrary.dll
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotApp\bin\Release\netcoreapp2.1\TaxiBotClassLibrary.pdb
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotApp\obj\Release\netcoreapp2.1\TaxiBotApp.csproj.CopyComplete
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotApp\bin\Release\netcoreapp2.1\Connected Services\Application Insights\ConnectedService.json
