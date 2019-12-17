@@ -13,6 +13,6 @@ namespace ProjectDatabase.Classes
         public int CountOfPeople { get; set; }
         public string DepartureTime { get; set; }
         public string RequestTime { get; set; }
-        public List<User> Users { get; set; }
+        public User User { get; set; }
     }
 }
