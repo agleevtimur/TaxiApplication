@@ -13,7 +13,7 @@ namespace ProjectDatabase.Repository
             {
                 var isInUsers = false;
                 foreach (User us in db.User)
-                    if (us.Phone == user.Phone)
+                    if (us.Nickname == user.Nickname)
                     {
                         isInUsers = true;
                         us.CountOfTrip++;
@@ -51,7 +51,7 @@ namespace ProjectDatabase.Repository
                         PlaceOfArrivalId = request.PlaceOfArrivalId,
                         DepartureTime = request.DepartureTime,
                         RequestTime = request.RequestTime,
-                        Users = request.Users
+                        User = request.User
                     });
                 db.SaveChanges();
             }
