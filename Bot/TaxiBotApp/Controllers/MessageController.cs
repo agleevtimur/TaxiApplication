@@ -10,7 +10,6 @@ namespace TaxiBotApp.Controllers
     [Route(@"api/message/update")] //webhook uri part
     public class MessageController : Controller
     {
-
         [HttpPost]
         public async Task<OkResult> Post([FromBody]Update update)
         {
@@ -29,10 +28,8 @@ namespace TaxiBotApp.Controllers
             }
             else
             {
-               foreach (var command in Bot.InternalCommands)
-                {
-                    command.Execute(message, client);
-                }
+                if (Bot.InternalCommand != null)
+                    Bot.InternalCommand.Execute(message, client);
             }
             return Ok();
         }

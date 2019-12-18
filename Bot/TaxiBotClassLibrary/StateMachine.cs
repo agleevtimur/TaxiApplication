@@ -11,42 +11,45 @@ namespace TaxiBotClassLibrary
     {
         public static void Run()
         {
-            var commands = GetFunctions();
-            
-            var states = new List<State<InterCommand>>()
+            var commands = new List<ICommand>
             {
-                new State<InterCommand>("Time"), // 0
-                new State<InterCommand>("LocationFrom"), // 1
-                new State<InterCommand>("LocationTo"), // 2
-                new State<InterCommand>("Amount"),// 3
-                new State<InterCommand>("Finish", true) // 4
+                new SetTime() as ICommand, // 0
+                new SetStartPoint() as ICommand, // 1
+                new SetDestination() as ICommand, // 2
+                new SetAmount() as ICommand // 3
             };
 
-            Action<List<InterCommand>, List<State<InterCommand>>> action = (func, statess) =>
+            var states = new List<State<ICommand>>()
             {
-                statess[0].Transition = new Dictionary<InterCommand, State<InterCommand>>();// start
+                new State<ICommand>("Time"), // 0
+                new State<ICommand>("LocationFrom"), // 1
+                new State<ICommand>("LocationTo"), // 2
+                new State<ICommand>("Amount"),// 3
+                new State<ICommand>("Finish", true) // 4
+            };
+
+            void action(List<ICommand> func, List<State<ICommand>> statess)
+            {
+                statess[0].Transition = new Dictionary<ICommand, State<ICommand>>();// start
 
                 for (int i = 1; i < statess.Count; i++)
                 {
                     if (statess[i].IsLastState != true)//состояние finish не может сделать откат или принять какие то данные
                     {
-                        statess[i].Transition = new Dictionary<InterCommand, State<InterCommand>>();
+                        statess[i].Transition = new Dictionary<ICommand, State<ICommand>>();
                     }
                     statess[i - 1].Transition.Add(func[i - 1], statess[i]);
                 };
-            };
+            }
 
-            NDFAutomate<InterCommand>.DefineNDFAutomate(states, commands, action);
+            NDFAutomate<ICommand>.DefineNDFAutomate(states, commands, action);
         }
 
-        private static List<InterCommand> GetFunctions()
+        public static void Revoke()
         {
-            var list = new List<InterCommand>();
-            list.Add(Activator.CreateInstance(typeof(SetTime)) as InterCommand);
-            list.Add(Activator.CreateInstance(typeof(SetStartPoint)) as InterCommand);
-            list.Add(Activator.CreateInstance(typeof(SetDestination)) as InterCommand);
-            list.Add(Activator.CreateInstance(typeof(SetAmount)) as InterCommand);
-            return list;
+            NDFAutomate<ICommand>.Functions = null;
+            NDFAutomate<ICommand>.States = null;
+            NDFAutomate<ICommand>.CurrentState = null;
         }
     }
 
@@ -61,7 +64,9 @@ namespace TaxiBotClassLibrary
             States = states;
             Functions = functions;
             action(Functions, States);
+            CurrentState = States[0];
         }
+        public static State<T> CurrentState { get; set; }
     }
 
     public class State<T>
@@ -69,7 +74,8 @@ namespace TaxiBotClassLibrary
         public Dictionary<T, State<T>> Transition { get; set; }
 
         public string Name { get; set; }
-        public bool IsLastState { get; set; }
+        public bool IsLastState { get; }
+        public string Container { get; set; }
 
         public State(string name, bool isLast = false)
         {

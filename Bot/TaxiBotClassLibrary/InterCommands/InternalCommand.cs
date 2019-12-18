@@ -6,8 +6,10 @@ using Telegram.Bot.Types;
 
 namespace TaxiBotClassLibrary.InterCommands
 {
-    public abstract class InterCommand
+    public interface ICommand
     {
-        public abstract void Execute(Message message, TelegramBotClient client);
+        void Execute(Message message, TelegramBotClient client);
+
+        bool Check(Message message);
     }
 }

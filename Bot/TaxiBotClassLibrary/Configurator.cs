@@ -19,22 +19,7 @@ namespace TaxiBotClassLibrary
                 list.Add((Command)Activator.CreateInstance(heir));
             return list;
         }
-        public static int index = 0;
-
-        public static List<InterCommand> GetInternalCommand()
-        {// заработает после /start
-            var command = new List<InterCommand>();
-            
-            if (NDFAutomate<InterCommand>.States != null)
-            {
-                foreach(var com in NDFAutomate<InterCommand>.States[index].Transition.Keys)
-                {
-                    command.Add(com);
-                }
-            }
-            //реализовать доступ к текущим командам через автомат
-            return command;
-        } 
-        
+        public static ICommand CurrentInternCommand => NDFAutomate<ICommand>.CurrentState.Transition
+                                                 .FirstOrDefault().Key;
     }
 }

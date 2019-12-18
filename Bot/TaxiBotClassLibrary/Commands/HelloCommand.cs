@@ -14,8 +14,8 @@ namespace TaxiBotClassLibrary.Commands
         public override async void Execute(Message message, TelegramBotClient client)
         {
             var chatId = message.Chat.Id;
-            var messageId = message.MessageId;
-            await client.SendTextMessageAsync(chatId, message.Type.ToString(), replyToMessageId: messageId);
+            var text = message.Text;
+            await client.SendTextMessageAsync(chatId, text + " " + message.Type);
         }
     }
 }

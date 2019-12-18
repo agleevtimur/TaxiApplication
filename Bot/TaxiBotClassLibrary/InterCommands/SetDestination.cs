@@ -6,13 +6,29 @@ using Telegram.Bot.Types;
 
 namespace TaxiBotClassLibrary.InterCommands
 {
-    class SetDestination : InterCommand
+    class SetDestination : ICommand
     {
-        public override async void Execute(Message message, TelegramBotClient client)
+        public async void Execute(Message message, TelegramBotClient client)
         {
-            Configurator.index = 3;
+            
             var id = message.From.Id;
-            await client.SendTextMessageAsync(id, "Сколько человек в вашей группе?");
+            if (Check(message))
+            {
+                await client.SendTextMessageAsync(id, "Сколько человек в вашей группе?");
+                var nextState = NDFAutomate<ICommand>.CurrentState.Transition[NDFAutomate<ICommand>.Functions[2]];
+                nextState.Container = message.Text;
+                NDFAutomate<ICommand>.CurrentState = nextState;
+            }
+            else await client.SendTextMessageAsync(id, "Данные неккоретны \nПопробуйте еще раз");
+        }
+
+        public bool Check(Message message)
+        {
+            if (int.TryParse(message.Text, out int location))
+            {
+                return location > 0 && location < 8;
+            }
+            else return false;
         }
     }
 }
