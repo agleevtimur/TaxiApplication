@@ -51,7 +51,7 @@ namespace DataBase.Repository
                         PlaceOfArrivalId = request.PlaceOfArrivalId,
                         DepartureTime = request.DepartureTime,
                         RequestTime = request.RequestTime,
-                        User = request.User
+                        UserId = request.UserId
                     });
                 db.SaveChanges();
             }
