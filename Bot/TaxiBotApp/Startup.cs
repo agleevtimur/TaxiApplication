@@ -19,7 +19,7 @@ namespace TaxiBotApp
         {
             Configuration = configuration;
         }
-
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -42,7 +42,8 @@ namespace TaxiBotApp
 
             app.UseHttpsRedirection();
             app.UseMvc();
-            Library.Init.Start();
+            Library.Repository.Start();
+            //Library.Init.Start();
             Models.Bot.GetMe().Wait();
         }
     }

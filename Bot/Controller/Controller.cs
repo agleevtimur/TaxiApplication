@@ -10,10 +10,10 @@ namespace Taxi_Algorithm
     {
         public static Request ParseToOrder(string time, string start, string finish, string countPerson, User user)//возвращаем ордер из сообщения cmdFind
         {
-            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Today.ToString(), user);
+            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, user);
         }
 
-        public static string AroundTime(string time)
+        public static DateTime AroundTime(string time)
         {
             var today = DateTime.Now;
             var split = time.Split(':', '.', ',', ';');//возможный парсинг строки со временем
@@ -21,7 +21,7 @@ namespace Taxi_Algorithm
             var minutes = int.Parse(split[1]);
             var aroundMinutes = (minutes / 5) * 5;
             var date = new DateTime(today.Year, today.Month, GetDay(hours, minutes), hours, aroundMinutes, 0);
-            return date.ToString();
+            return date;
         }
 
         public static int GetDay(int hours, int minutes)
@@ -128,7 +128,7 @@ namespace Taxi_Algorithm
 
     public static class Algorithm
     {
-        public static IRepository Repository = new Repository();
+        public static IRepository Repository = new Library.Repository();
 
         public static IEnumerable<User> Find(string time, string start, string finish, string countPerson, User user)
         {

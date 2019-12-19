@@ -1,0 +1,11 @@
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/bin/Debug/netcoreapp2.1/ClassLibrary1.deps.json
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/bin/Debug/netcoreapp2.1/ClassLibrary1.dll
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/bin/Debug/netcoreapp2.1/ClassLibrary1.pdb
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/bin/Debug/netcoreapp2.1/DataBase.dll
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/bin/Debug/netcoreapp2.1/DataBase.pdb
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/Debug/netcoreapp2.1/ClassLibrary1.csprojAssemblyReference.cache
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/Debug/netcoreapp2.1/ClassLibrary1.AssemblyInfoInputs.cache
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/Debug/netcoreapp2.1/ClassLibrary1.AssemblyInfo.cs
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/Debug/netcoreapp2.1/ClassLibrary1.csproj.CopyComplete
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/Debug/netcoreapp2.1/ClassLibrary1.dll
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/Debug/netcoreapp2.1/ClassLibrary1.pdb

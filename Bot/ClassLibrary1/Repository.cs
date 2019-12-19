@@ -242,15 +242,23 @@ WHERE EXISTS (SELECT * FROM Request WHERE his.Id = PlaceOfArrivalId);
 SELECT * FROM Request WHERE Id = " + id.ToString() + ";";
 
                 QC.SqlDataReader reader = command.ExecuteReader();
-                var request = new Request { 
-                    Id = reader.GetInt32(0),
-                    DeparturePointId = reader.GetInt32(1),
-                    PlaceOfArrivalId = reader.GetInt32(2),
-                    CountOfPeople = reader.GetInt32(3),
-                    DepartureTime = reader.GetDateTime(4),
-                    RequestTime = reader.GetDateTime(5),
-                    UserId = reader.GetInt32(6)
-                };
+                var request = new Request(
+                    reader.GetInt32(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetDateTime(4),
+                    reader.GetDateTime(5),
+                    reader.GetInt32(0),
+                    reader.GetInt32(6));
+                //var request = new Request { 
+                //    Id = reader.GetInt32(0),
+                //    DeparturePointId = reader.GetInt32(1),
+                //    PlaceOfArrivalId = reader.GetInt32(2),
+                //    CountOfPeople = reader.GetInt32(3),
+                //    DepartureTime = reader.GetDateTime(4),
+                //    RequestTime = reader.GetDateTime(5),
+                //    UserId = reader.GetInt32(6)
+                //};
                 command.CommandText = @"  
 DELETE FROM Request
 WHERE Id = " + id.ToString() + ";";
@@ -343,15 +351,27 @@ SELECT * FROM Request";
                 var list = new List<Request>();
                 while (reader.Read())
                 {
-                    list.Add(new Request { 
-                        Id = reader.GetInt32(0), 
-                        DeparturePointId = reader.GetInt32(1), 
-                        PlaceOfArrivalId = reader.GetInt32(2), 
-                        CountOfPeople = reader.GetInt32(3),
-                        DepartureTime = reader.GetDateTime(4),
-                        RequestTime = reader.GetDateTime(5),
-                        UserId = reader.GetInt32(6)
-                    });
+
+                    var request = new Request(
+                        reader.GetInt32(1),
+                        reader.GetInt32(2),
+                        reader.GetInt32(3),
+                        reader.GetDateTime(4),
+                        reader.GetDateTime(5),
+                        reader.GetInt32(0),
+                        reader.GetInt32(6));
+                    list.Add(request
+                    //    new Request
+                    //{
+                    //    Id = reader.GetInt32(0), 
+                    //    DeparturePointId = reader.GetInt32(1), 
+                    //    PlaceOfArrivalId = reader.GetInt32(2), 
+                    //    CountOfPeople = reader.GetInt32(3),
+                    //    DepartureTime = reader.GetDateTime(4),
+                    //    RequestTime = reader.GetDateTime(5),
+                    //    UserId = reader.GetInt32(6)
+                    //}
+                        );
                 }
                 return list;
             }

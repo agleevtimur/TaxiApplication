@@ -1,37 +1,102 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj": {}
+    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/Controller.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj": {
+    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj",
-        "projectName": "Controller",
-        "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj",
-        "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\obj\\",
+        "projectUniqueName": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj",
+        "projectName": "ClassLibrary1",
+        "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj",
+        "packagesPath": "/Users/ildardavletarov/.nuget/packages/",
+        "outputPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fanto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ildardavletarov/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj": {
-                "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj"
+              "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj": {
+                "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/Controller.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/Controller.csproj",
+        "projectName": "Controller",
+        "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/Controller.csproj",
+        "packagesPath": "/Users/ildardavletarov/.nuget/packages/",
+        "outputPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/ildardavletarov/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj": {
+                "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj"
+              },
+              "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj": {
+                "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj"
               }
             }
           }
@@ -62,31 +127,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj": {
+    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj",
-        "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\obj\\",
+        "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj",
+        "packagesPath": "/Users/ildardavletarov/.nuget/packages/",
+        "outputPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fanto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ildardavletarov/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -124,7 +187,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
