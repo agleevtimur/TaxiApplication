@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime;
 using TaxiBotClassLibrary.InterCommands;
 
 namespace TaxiBotClassLibrary
@@ -16,16 +13,18 @@ namespace TaxiBotClassLibrary
                 new SetTime() as ICommand, // 0
                 new SetStartPoint() as ICommand, // 1
                 new SetDestination() as ICommand, // 2
-                new SetAmount() as ICommand // 3
+                new SetAmount() as ICommand, // 3
+                new GetFellows() as ICommand // 4
             };
 
             var states = new List<State<ICommand>>()
             {
-                new State<ICommand>("Time"), // 0
-                new State<ICommand>("LocationFrom"), // 1
-                new State<ICommand>("LocationTo"), // 2
-                new State<ICommand>("Amount"),// 3
-                new State<ICommand>("Finish", true) // 4
+                new State<ICommand>(), // 0 Time
+                new State<ICommand>(), // 1 LocationFrom
+                new State<ICommand>(), // 2 LocationTo
+                new State<ICommand>(),// 3 Amount
+                new State<ICommand>(),// 4 Fellows
+                new State<ICommand>(true) // 5 Finish
             };
 
             void action(List<ICommand> func, List<State<ICommand>> statess)
@@ -47,16 +46,14 @@ namespace TaxiBotClassLibrary
 
         public static void Revoke()
         {
-            NDFAutomate<ICommand>.Functions = null;
-            NDFAutomate<ICommand>.States = null;
-            NDFAutomate<ICommand>.CurrentState = null;
+            NDFAutomate<ICommand>.DropNDFAutomate();
         }
     }
 
     public static class NDFAutomate<T>
     {
-        public static List<State<T>> States { get; set; }
-        public static List<T> Functions { get; set; }
+        public static List<State<T>> States { get; private set; }
+        public static List<T> Functions { get; private set; }
 
         public static void DefineNDFAutomate(List<State<T>> states, List<T> functions,
             Action<List<T>, List<State<T>>> action)
@@ -66,21 +63,25 @@ namespace TaxiBotClassLibrary
             action(Functions, States);
             CurrentState = States[0];
         }
+
+        public static void DropNDFAutomate()
+        {
+            NDFAutomate<ICommand>.Functions = null;
+            NDFAutomate<ICommand>.States = null;
+            NDFAutomate<ICommand>.CurrentState = null;
+        }
         public static State<T> CurrentState { get; set; }
     }
 
     public class State<T>
     {
         public Dictionary<T, State<T>> Transition { get; set; }
-
-        public string Name { get; set; }
         public bool IsLastState { get; }
         public string Container { get; set; }
 
-        public State(string name, bool isLast = false)
+        public State( bool isLast = false)
         {
             IsLastState = isLast;
-            Name = name;
         }
 
     }

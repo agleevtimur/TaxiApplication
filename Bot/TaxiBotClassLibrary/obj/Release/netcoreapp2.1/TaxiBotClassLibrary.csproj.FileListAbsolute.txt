@@ -4,5 +4,12 @@ C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\ne
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\TaxiBotClassLibrary.deps.json
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\TaxiBotClassLibrary.dll
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\TaxiBotClassLibrary.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\Controller.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\DataBase.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\Controller.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\DataBase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\netcoreapp2.1\TaxiBotClassLibrary.csproj.CopyComplete
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\netcoreapp2.1\TaxiBotClassLibrary.dll
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\netcoreapp2.1\TaxiBotClassLibrary.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\ClassLibrary1.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\ClassLibrary1.pdb

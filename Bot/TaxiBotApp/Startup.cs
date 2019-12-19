@@ -42,6 +42,7 @@ namespace TaxiBotApp
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            Library.Init.Start();
             Models.Bot.GetMe().Wait();
         }
     }

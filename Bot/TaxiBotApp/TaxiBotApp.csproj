@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
     <ProjectReference Include="..\TaxiBotClassLibrary\TaxiBotClassLibrary.csproj" />
   </ItemGroup>
 

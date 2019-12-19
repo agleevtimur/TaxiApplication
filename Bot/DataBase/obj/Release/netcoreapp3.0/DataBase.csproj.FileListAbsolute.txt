@@ -1,0 +1,8 @@
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp3.0\DataBase.AssemblyInfoInputs.cache
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp3.0\DataBase.AssemblyInfo.cs
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\bin\Release\netcoreapp3.0\DataBase.deps.json
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\bin\Release\netcoreapp3.0\DataBase.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\bin\Release\netcoreapp3.0\DataBase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp3.0\DataBase.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp3.0\DataBase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp3.0\DataBase.csprojAssemblyReference.cache

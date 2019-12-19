@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Telegram.Bot;
 using Telegram.Bot.Types;
@@ -21,8 +22,24 @@ namespace TaxiBotClassLibrary.InterCommands
             {
                 data.Add(state.Container);
             }
-            //метод ильдара
-            await client.SendTextMessageAsync(id, "Запрос обрабатывается");
+            var user = new DataBase.Classes.User(message.From.Username, id);
+            var t = Taxi_Algorithm.Algorithm.Find(data[0], data[1], data[2], data[3], user);
+            if (t == null)
+                await client.SendTextMessageAsync(id, "Запрос обрабатывается");
+            else 
+                foreach(var mes in t)
+                {
+                    DataBase.Classes.User[] arr = { mes };
+                    var otherUsers = t.Except(arr).Select(x => x.Nickname);
+                    var builder = new StringBuilder();//3 other users nickname
+                    foreach(var item in otherUsers)
+                    {
+                        builder.Append(item);
+                        if(item!=otherUsers.Last())
+                        builder.Append(", ");
+                    }
+                    await client.SendTextMessageAsync(mes.Id, builder.ToString());
+                }
         }
     }
 }
