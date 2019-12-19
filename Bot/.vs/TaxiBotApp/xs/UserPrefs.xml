@@ -2,15 +2,15 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="DataBase/Classes/Request.cs">
     <Files>
       <File FileName="ClassLibrary1/Repository.cs" Line="80" Column="19" />
-      <File FileName="Controller/Controller.cs" Line="14" Column="10" />
+      <File FileName="Controller/Controller.cs" />
       <File FileName="TaxiBotClassLibrary/Commands/InfoCommand.cs" />
-      <File FileName="TaxiBotApp/Startup.cs" Line="24" Column="1" />
-      <File FileName="DataBase/Classes/Request.cs" Line="31" Column="1" />
+      <File FileName="TaxiBotApp/Startup.cs" />
+      <File FileName="DataBase/Classes/Request.cs" Line="10" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="TaxiBotApp" expanded="True">
+          <Node name="TaxiBotApp" expanded="True" selected="True">
             <Node name="ClassLibrary1" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
@@ -22,9 +22,7 @@
               </Node>
             </Node>
             <Node name="DataBase" expanded="True">
-              <Node name="Classes" expanded="True">
-                <Node name="Request.cs" selected="True" />
-              </Node>
+              <Node name="Classes" expanded="True" />
             </Node>
             <Node name="TaxiBotApp" expanded="True">
               <Node name="Dependencies" expanded="True" />
@@ -41,7 +39,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TaxiBotApp PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

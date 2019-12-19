@@ -5,3 +5,4 @@
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Debug/netcoreapp2.1/DataBase.AssemblyInfo.cs
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Debug/netcoreapp2.1/DataBase.dll
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Debug/netcoreapp2.1/DataBase.pdb
+/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Debug/netcoreapp2.1/DataBase.csprojAssemblyReference.cache
