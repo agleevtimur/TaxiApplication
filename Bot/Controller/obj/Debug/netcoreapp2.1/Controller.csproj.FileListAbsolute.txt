@@ -11,3 +11,16 @@
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/obj/Debug/netcoreapp2.1/Controller.csproj.CopyComplete
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/obj/Debug/netcoreapp2.1/Controller.dll
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/Controller/obj/Debug/netcoreapp2.1/Controller.pdb
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\Controller.deps.json
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\Controller.dll
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\Controller.pdb
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\ClassLibrary1.dll
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\DataBase.dll
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\DataBase.pdb
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\bin\Debug\netcoreapp2.1\ClassLibrary1.pdb
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\obj\Debug\netcoreapp2.1\Controller.csprojAssemblyReference.cache
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\obj\Debug\netcoreapp2.1\Controller.AssemblyInfoInputs.cache
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\obj\Debug\netcoreapp2.1\Controller.AssemblyInfo.cs
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\obj\Debug\netcoreapp2.1\Controller.csproj.CopyComplete
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\obj\Debug\netcoreapp2.1\Controller.dll
+C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\Controller\obj\Debug\netcoreapp2.1\Controller.pdb

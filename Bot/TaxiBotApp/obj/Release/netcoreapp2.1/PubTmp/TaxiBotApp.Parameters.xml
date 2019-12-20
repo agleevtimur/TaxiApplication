@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IIS Web Application Name" description="" value="TaxiBotApp20191219011147" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/TaxiBotApp/obj/Release/netcoreapp2\.1/PubTmp/Out/$" />
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotApp\\obj\\Release\\netcoreapp2\.1\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

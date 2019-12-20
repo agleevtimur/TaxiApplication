@@ -1,35 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj": {}
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\ClassLibrary1\\ClassLibrary1.csproj": {}
   },
   "projects": {
-    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj": {
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\ClassLibrary1\\ClassLibrary1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj",
+        "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\ClassLibrary1\\ClassLibrary1.csproj",
         "projectName": "ClassLibrary1",
-        "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/ClassLibrary1.csproj",
-        "packagesPath": "/Users/ildardavletarov/.nuget/packages/",
-        "outputPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/ClassLibrary1/obj/",
+        "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\ClassLibrary1\\ClassLibrary1.csproj",
+        "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/ildardavletarov/.config/NuGet/NuGet.Config"
+          "C:\\Users\\fanto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj": {
-                "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj"
+              "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj"
               }
             }
           }
@@ -64,29 +66,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj": {
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj",
+        "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/DataBase.csproj",
-        "packagesPath": "/Users/ildardavletarov/.nuget/packages/",
-        "outputPath": "/Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/",
+        "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj",
+        "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/ildardavletarov/.config/NuGet/NuGet.Config"
+          "C:\\Users\\fanto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -124,7 +128,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

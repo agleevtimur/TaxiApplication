@@ -19,7 +19,8 @@ namespace Library
                 ))
             {
                 connection.Open();
-                CreateTable(connection);
+                //CreateTable(connection);
+                InsertLocations(connection);
             }
         }
 
@@ -30,18 +31,18 @@ namespace Library
                 command.Connection = connection;
                 command.CommandType = DT.CommandType.Text;
                 command.CommandText = @"  
-CREATE TABLE Location
+CREATE TABLE IF NOT EXISTS Location
 (
     Id SERIAL PRIMARY KEY, 
     NameOfPoint VARCHAR(255) NOT NULL
 );
-CREATE TABLE User
+CREATE TABLE IF NOT EXISTS User
 (
     Id SERIAL PRIMARY KEY, 
     Nickname VARCHAR(100) NOT NULL,
     CountOfTrip INTEGER DEFAULT 0
 );
-CREATE TABLE Request
+CREATE TABLE IF NOT EXISTS Request
 (
     Id SERIAL PRIMARY KEY, 
     DeparturePointId INTEGER,
@@ -52,7 +53,7 @@ CREATE TABLE Request
     UserId INTEGER REFERENCES User (Id),
     FOREIGN KEY (DeparturePointId, PlaceOfArrivalId) REFERENCES Location (Id)
 );
-CREATE TABLE HistoryOfRequest
+CREATE TABLE IF NOT EXISTS HistoryOfRequest
 (
     Id SERIAL PRIMARY KEY, 
     DeparturePointId INTEGER,
@@ -62,7 +63,7 @@ CREATE TABLE HistoryOfRequest
     RequestTime DATE,
     UserId INTEGER,
 );
-CREATE TABLE HistoryOfLocation
+CREATE TABLE IF NOT EXISTS HistoryOfLocation
 (
     Id SERIAL PRIMARY KEY, 
     NameOfPoint VARCHAR(255) NOT NULL,
@@ -70,14 +71,18 @@ CREATE TABLE HistoryOfLocation
     CountOfArrivals INTEGER DEFAULT 0,
 );
 ";
-                InsertLocations(connection);
                 command.ExecuteScalar();
+
             }
         }
 
         private static void InsertLocations(QC.SqlConnection connection)
         {
-            var list = new List<string>
+
+
+            using (var command = new QC.SqlCommand())
+            {
+                var list = new List<string>
             {
                 "Деревня Универсиады",
                 "Кремлевская 35А",
@@ -99,15 +104,12 @@ CREATE TABLE HistoryOfLocation
                 "Карла Маркса 10",
                 "Карла Маркса 68"
             };
-
-            using (var command = new QC.SqlCommand())
-            {
                 command.Connection = connection;
                 command.CommandType = DT.CommandType.Text;
                 var builder = new StringBuilder();
                 for (var i = 0; i < list.Count; i++)
                 {
-                    builder.Append("INSERT INTO Location (Id, NameOfPoint) VALUES (" + i + "," + list[i] + ");");
+                    builder.Append("INSERT INTO Location (Id, NameOfPoint) VALUES (" + i + ",'" + list[i] + "');");
                 }
                 command.CommandText = builder.ToString();
                 command.ExecuteScalar();
@@ -115,7 +117,7 @@ CREATE TABLE HistoryOfLocation
 
                 for (var i = 0; i < list.Count; i++)
                 {
-                    builder.Append("INSERT INTO HistoryOfLocation (Id, NameOfPoint) VALUES (" + i + "," + list[i] + ");");
+                    builder.Append("INSERT INTO HistoryOfLocation (Id, NameOfPoint) VALUES (" + i + ",'" + list[i] + "');");
                 }
                 command.CommandText = builder.ToString();
                 command.ExecuteScalar();
