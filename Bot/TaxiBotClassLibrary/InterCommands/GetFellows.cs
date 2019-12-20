@@ -22,15 +22,17 @@ namespace TaxiBotClassLibrary.InterCommands
             {
                 data.Add(state.Container);
             }
-            var user = new DataBase.Classes.User(message.From.Username, id);
-            var t = Taxi_Algorithm.Algorithm.Find(data[0], data[1], data[2], data[3], user);
+
+            await client.SendTextMessageAsync(id, "Дошел до find");
+            var user = new DataBase.Classes.Client(message.From.Username);//TODO Find должен возвращать TelegramId CHECK
+            var t = Taxi_Algorithm.Algorithm.Find(data[0], data[1], data[2], data[3],id, user);
             if (t == null)
                 await client.SendTextMessageAsync(id, "Запрос обрабатывается");
             else 
                 foreach(var mes in t)
                 {
-                    DataBase.Classes.User[] arr = { mes };
-                    var otherUsers = t.Except(arr).Select(x => x.Nickname);
+                    DataBase.Classes.Request[] arr = { mes };
+                    var otherUsers = t.Except(arr).Select(x => x.Client);
                     var builder = new StringBuilder();//3 other users nickname
                     foreach(var item in otherUsers)
                     {
@@ -38,7 +40,7 @@ namespace TaxiBotClassLibrary.InterCommands
                         if(item!=otherUsers.Last())
                         builder.Append(", ");
                     }
-                    await client.SendTextMessageAsync(mes.Id, builder.ToString());
+                    await client.SendTextMessageAsync(mes.TelegramId, builder.ToString());
                 }
         }
     }

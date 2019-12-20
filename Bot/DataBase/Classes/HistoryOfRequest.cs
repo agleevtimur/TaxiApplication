@@ -13,7 +13,7 @@ namespace DataBase.Classes
         public int CountOfPeople { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime RequestTime { get; set; }
-        public User User { get; set; }
+        public  Client User { get; set; }
         public int UserId { get; set; }
     }
 }

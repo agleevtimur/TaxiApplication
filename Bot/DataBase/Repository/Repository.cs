@@ -7,20 +7,20 @@ namespace DataBase.Repository
 {
     public class Repository : IRepository
     {
-        public void SaveUser(User user)
+        public void SaveUser(Client client)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
                 var isInUsers = false;
-                foreach (User us in db.User)
-                    if (us.Nickname == user.Nickname)
+                foreach (Client cl in db.Client)
+                    if (cl.Nickname == client.Nickname)
                     {
                         isInUsers = true;
-                        us.CountOfTrip++;
+                        cl.CountOfTrip++;
                         break;
                     }
                 if (isInUsers == false)
-                    db.User.Add(user);
+                    db.Client.Add(client);
                 db.SaveChanges();
             }
         }
@@ -45,7 +45,6 @@ namespace DataBase.Repository
                 db.HistoryOfRequest.Add(
                     new HistoryOfRequest
                     {
-                        Id = request.Id,
                         CountOfPeople = request.CountOfPeople,
                         DeparturePointId = request.DeparturePointId,
                         PlaceOfArrivalId = request.PlaceOfArrivalId,
@@ -63,7 +62,7 @@ namespace DataBase.Repository
             {
                 var list = new List<Location>();
                 var locations = db.Location;
-                foreach (Location location in locations)
+                foreach (var location in locations)
                     list.Add(location);
                 return list;
             }

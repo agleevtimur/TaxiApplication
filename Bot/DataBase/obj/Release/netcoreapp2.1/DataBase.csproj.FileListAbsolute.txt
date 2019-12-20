@@ -6,6 +6,14 @@ C:/Users/fanto/Desktop/telegramBot/TaxiBotApp/DataBase/obj/Release/netcoreapp2.1
 C:/Users/fanto/Desktop/telegramBot/TaxiBotApp/DataBase/obj/Release/netcoreapp2.1/DataBase.dll
 C:/Users/fanto/Desktop/telegramBot/TaxiBotApp/DataBase/obj/Release/netcoreapp2.1/DataBase.pdb
 C:/Users/fanto/Desktop/telegramBot/TaxiBotApp/DataBase/obj/Release/netcoreapp2.1/DataBase.csprojAssemblyReference.cache
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/bin/Release/netcoreapp2.1/DataBase.deps.json
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/bin/Release/netcoreapp2.1/DataBase.dll
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/bin/Release/netcoreapp2.1/DataBase.pdb
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.csprojAssemblyReference.cache
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.AssemblyInfoInputs.cache
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.AssemblyInfo.cs
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.dll
+C:/Users/fanto/OneDrive/Desktop/TaxiApplication/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.pdb
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/bin/Release/netcoreapp2.1/DataBase.deps.json
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/bin/Release/netcoreapp2.1/DataBase.dll
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/bin/Release/netcoreapp2.1/DataBase.pdb
@@ -13,11 +21,3 @@ C:/Users/fanto/Desktop/telegramBot/TaxiBotApp/DataBase/obj/Release/netcoreapp2.1
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.AssemblyInfo.cs
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.dll
 /Users/ildardavletarov/TaxiTotal/TaxiApplication/Bot/DataBase/obj/Release/netcoreapp2.1/DataBase.pdb
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\bin\Release\netcoreapp2.1\DataBase.deps.json
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\bin\Release\netcoreapp2.1\DataBase.dll
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\bin\Release\netcoreapp2.1\DataBase.pdb
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\obj\Release\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\obj\Release\netcoreapp2.1\DataBase.AssemblyInfoInputs.cache
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\obj\Release\netcoreapp2.1\DataBase.AssemblyInfo.cs
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\obj\Release\netcoreapp2.1\DataBase.dll
-C:\Users\fanto\OneDrive\Desktop\TaxiApplication\TaxiApplication\Bot\DataBase\obj\Release\netcoreapp2.1\DataBase.pdb

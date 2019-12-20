@@ -42,8 +42,9 @@ namespace TaxiBotApp
 
             app.UseHttpsRedirection();
             app.UseMvc();
-            Library.Repository.Start();
-            //Library.Init.Start();
+            //Library.Repository.Start();
+            //DataBase.Initialize.SaveUser1();
+            //DataBase.Initialize.InitialLocation();
             Models.Bot.GetMe().Wait();
         }
     }

@@ -8,9 +8,9 @@ namespace Taxi_Algorithm
 {
     public static class Extension
     {
-        public static Request ParseToOrder(string time, string start, string finish, string countPerson, User user)//возвращаем ордер из сообщения cmdFind
+        public static Request ParseToOrder(string time, string start, string finish, string countPerson,int telegramId, Client user)//возвращаем ордер из сообщения cmdFind
         {
-            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, user);
+            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, user,telegramId);
         }
 
         public static DateTime AroundTime(string time)
@@ -128,22 +128,22 @@ namespace Taxi_Algorithm
 
     public static class Algorithm
     {
-        public static IRepository Repository = new Library.Repository();
+        public static IRepository Repository = new Repository();
 
-        public static IEnumerable<User> Find(string time, string start, string finish, string countPerson, User user)
+        public static IEnumerable<Request> Find(string time, string start, string finish, string countPerson,int telegramId, Client client)
         {
-            Repository.SaveUser(user);
-            var newestRequest = Extension.ParseToOrder(time, start, finish, countPerson, user);
+            Repository.SaveUser(client);
+            var newestRequest = Extension.ParseToOrder(time, start, finish, countPerson,telegramId, client);
             Repository.SaveRequest(newestRequest);//добавляем в репозиторий новый заказ
             var comlete = CheckCompleteOrder(newestRequest);//вызываем чекер на набор такси
             if (!comlete.IsComplete)
                 return null;
-            var users = comlete.enumReqs.Select(x => x.User);
-            foreach (var req in comlete.enumReqs)
+            var reqs = comlete.enumReqs;
+            foreach (var req in reqs)
             {
                 Repository.DeleteRequest(req.Id);
             }
-            return users;
+            return reqs;
         }
 
         public static List<Location> GetLocations()

@@ -14,6 +14,7 @@ namespace TaxiBotClassLibrary.Commands
         {
             var id = message.From.Id;
             var info = Taxi_Algorithm.Algorithm.GetLocations();
+
             var locations = new StringBuilder();
             foreach (var location in info)
             {
