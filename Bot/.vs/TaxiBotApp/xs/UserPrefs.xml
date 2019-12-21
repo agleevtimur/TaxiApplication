@@ -1,0 +1,59 @@
+﻿<Properties StartupConfiguration="{929C101A-74F1-4FF3-B697-008AB30E39DE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controller/Controller.cs">
+    <Files>
+      <File FileName="Controller/Controller.cs" Line="19" Column="13" />
+      <File FileName="DataBase/Repository/Repository.cs" Line="33" Column="58" />
+      <File FileName="DataBase/ApplicationContext.cs" Line="20" Column="13" />
+      <File FileName="TaxiBotApp/Startup.cs" Line="43" Column="39" />
+      <File FileName="DataBase/Classes/Request.cs" Line="19" Column="37" />
+      <File FileName="DataBase/Classes/Location.cs" Line="1" Column="1" />
+      <File FileName="DataBase/Classes/HistoryOfRequest.cs" />
+      <File FileName="TaxiBotClassLibrary/InterCommands/GetFellows.cs" Line="36" Column="62" />
+      <File FileName="ClassLibrary1/Repository.cs" />
+      <File FileName="TaxiBotClassLibrary/Commands/StartCommand.cs" Line="1" Column="1" />
+      <File FileName="TaxiBotClassLibrary/Commands/FindCommand.cs" Line="1" Column="1" />
+      <File FileName="TaxiBotClassLibrary/InterCommands/SetAmount.cs" Line="17" Column="107" />
+      <File FileName="TaxiBotClassLibrary/StateMachine.cs" Line="56" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TaxiBotApp" expanded="True">
+            <Node name="ClassLibrary1" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Controller" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+              <Node name="Controller.cs" selected="True" />
+            </Node>
+            <Node name="DataBase" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Classes" expanded="True" />
+              <Node name="Repository" expanded="True" />
+            </Node>
+            <Node name="TaxiBotApp" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="TaxiBotClassLibrary" expanded="True">
+              <Node name="Commands" expanded="True" />
+              <Node name="InterCommands" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TaxiBotApp PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

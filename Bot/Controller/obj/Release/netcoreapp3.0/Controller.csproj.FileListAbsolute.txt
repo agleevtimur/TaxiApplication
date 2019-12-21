@@ -1,0 +1,11 @@
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\bin\Release\netcoreapp3.0\Controller.deps.json
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\bin\Release\netcoreapp3.0\Controller.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\bin\Release\netcoreapp3.0\Controller.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\bin\Release\netcoreapp3.0\ProjectDatabase.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\bin\Release\netcoreapp3.0\ProjectDatabase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\obj\Release\netcoreapp3.0\Controller.csprojAssemblyReference.cache
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\obj\Release\netcoreapp3.0\Controller.AssemblyInfoInputs.cache
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\obj\Release\netcoreapp3.0\Controller.AssemblyInfo.cs
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\obj\Release\netcoreapp3.0\Controller.csproj.CopyComplete
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\obj\Release\netcoreapp3.0\Controller.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\Controller\obj\Release\netcoreapp3.0\Controller.pdb

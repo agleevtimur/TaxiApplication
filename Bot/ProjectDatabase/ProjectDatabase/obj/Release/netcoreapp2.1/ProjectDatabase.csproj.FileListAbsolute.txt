@@ -1,0 +1,10 @@
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\bin\Release\netcoreapp2.1\ProjectDatabase.deps.json
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\bin\Release\netcoreapp2.1\ProjectDatabase.runtimeconfig.json
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\bin\Release\netcoreapp2.1\ProjectDatabase.runtimeconfig.dev.json
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\bin\Release\netcoreapp2.1\ProjectDatabase.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\bin\Release\netcoreapp2.1\ProjectDatabase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\obj\Release\netcoreapp2.1\ProjectDatabase.AssemblyInfoInputs.cache
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\obj\Release\netcoreapp2.1\ProjectDatabase.AssemblyInfo.cs
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\obj\Release\netcoreapp2.1\ProjectDatabase.dll
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\obj\Release\netcoreapp2.1\ProjectDatabase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\ProjectDatabase\ProjectDatabase\obj\Release\netcoreapp2.1\ProjectDatabase.csprojAssemblyReference.cache
