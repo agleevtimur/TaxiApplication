@@ -9,7 +9,6 @@
       "TaxiBotClassLibrary/1.0.0": {
         "dependencies": {
           "Controller": "1.0.0",
-          "DataBase": "1.0.0",
           "Telegram.Bot": "15.0.0"
         },
         "runtime": {

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiBotClassLibrary", "Taxi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{138B2341-4322-42AF-8E61-386F320721F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "..\..\..\Downloads\Telegram Desktop\DataBase\DataBase\DataBase.csproj", "{27412B92-B26E-4A18-8B83-FA95E09B8EA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{7BA69DAC-CF9F-4C86-A1B1-747121DB3F0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{138B2341-4322-42AF-8E61-386F320721F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{138B2341-4322-42AF-8E61-386F320721F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{138B2341-4322-42AF-8E61-386F320721F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA69DAC-CF9F-4C86-A1B1-747121DB3F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA69DAC-CF9F-4C86-A1B1-747121DB3F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA69DAC-CF9F-4C86-A1B1-747121DB3F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA69DAC-CF9F-4C86-A1B1-747121DB3F0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

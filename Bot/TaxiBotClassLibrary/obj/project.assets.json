@@ -5396,14 +5396,13 @@
     },
     "DataBase/1.0.0": {
       "type": "project",
-      "path": "../../../../Downloads/Telegram Desktop/DataBase/DataBase/DataBase.csproj",
-      "msbuildProject": "../../../../Downloads/Telegram Desktop/DataBase/DataBase/DataBase.csproj"
+      "path": "../DataBase/DataBase.csproj",
+      "msbuildProject": "../DataBase/DataBase.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Controller >= 1.0.0",
-      "DataBase >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Telegram.Bot >= 15.0.0"
     ]
@@ -5440,9 +5439,6 @@
           "projectReferences": {
             "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj": {
               "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj"
-            },
-            "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj"
             }
           }
         }

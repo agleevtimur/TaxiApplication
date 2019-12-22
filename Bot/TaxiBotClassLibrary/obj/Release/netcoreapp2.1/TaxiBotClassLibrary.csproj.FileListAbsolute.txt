@@ -33,8 +33,8 @@ C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\ne
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\TaxiBotClassLibrary.pdb
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\Controller.dll
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\DataBase.dll
-C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\DataBase.pdb
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\Controller.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\bin\Release\netcoreapp2.1\DataBase.pdb
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\netcoreapp2.1\TaxiBotClassLibrary.csprojAssemblyReference.cache
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\netcoreapp2.1\TaxiBotClassLibrary.AssemblyInfoInputs.cache
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\TaxiBotClassLibrary\obj\Release\netcoreapp2.1\TaxiBotClassLibrary.AssemblyInfo.cs
