@@ -12,12 +12,13 @@ namespace TaxiBotClassLibrary.InterCommands
         public async void Execute(Message message, TelegramBotClient client)
         { 
             var id = message.From.Id;
-            if (Check(message))
+            if (Check(message.Text))
             {
-                await client.SendTextMessageAsync(id, "Откуда едете?");
-                var nextState = NDFAutomate<ICommand>.CurrentState.Transition[NDFAutomate<ICommand>.Functions[0]];
-                nextState.Container = message.Text;
-                NDFAutomate<ICommand>.CurrentState = nextState;
+                await client.SendTextMessageAsync(id, "Откуда едете? ");
+                var next = NDFAutomate<ICommand>.CurrentState.Transition[NDFAutomate<ICommand>.Functions[0]];
+                NDFAutomate<ICommand>.CurrentState = next;
+                //Configurator.Role[id] = Configurator.Role[id].Transition[Data<ICommand>.Commands[0]];
+                Configurator.Values.Add(message.Text);
             }
             else
             {
@@ -26,9 +27,9 @@ namespace TaxiBotClassLibrary.InterCommands
 
         }
 
-        public bool Check(Message message)
+        public bool Check(string message)
         {
-            bool formatIsCorrect = TimeSpan.TryParse(message.Text, out TimeSpan time);
+            bool formatIsCorrect = TimeSpan.TryParse(message, out TimeSpan time);
             return formatIsCorrect;
             //var data = message.Text.Split(':');
             //bool hourIsValid;

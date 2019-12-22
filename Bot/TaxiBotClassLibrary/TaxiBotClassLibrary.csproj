@@ -9,9 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\..\..\..\Downloads\Telegram Desktop\DataBase\DataBase\DataBase.csproj" />
     <ProjectReference Include="..\Controller\Controller.csproj" />
-    <ProjectReference Include="..\DataBase\DataBase.csproj" />
   </ItemGroup>
 
 </Project>

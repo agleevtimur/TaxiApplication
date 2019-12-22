@@ -1,16 +1,18 @@
-﻿using System;
+﻿using DataBase.Classes;
+using DataBase.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataBase.Classes;
-using DataBase.Repository;
+//using ProjectDatabase.Classes;
+//using ProjectDatabase.Repository;
 //TODO удалять заказы если текущая дата больше даты заказа
 namespace Taxi_Algorithm
 {
     public static class Extension
     {
-        public static Request ParseToOrder(string time, string start, string finish, string countPerson,int telegramId, Client user)//возвращаем ордер из сообщения cmdFind
+        public static Request ParseToOrder(string time, string start, string finish, string countPerson, Client client)//возвращаем ордер из сообщения cmdFind
         {
-            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, user,telegramId);
+            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, client.Telegram, client.Nickname);
         }
 
         public static DateTime AroundTime(string time)
@@ -117,6 +119,7 @@ namespace Taxi_Algorithm
                 case 1://ищем сначала 3, потом 2 1, потом 1 1 1
                     return Orders1(suitedOrders, newestOrder);
                 case 2://ищем cначала 2, потом 1 1
+
                     return Orders2(suitedOrders, newestOrder);
                 case 3://ищем сначала 1
                     return Orders3(suitedOrders, newestOrder);
@@ -130,10 +133,11 @@ namespace Taxi_Algorithm
     {
         public static IRepository Repository = new Repository();
 
-        public static IEnumerable<Request> Find(string time, string start, string finish, string countPerson,int telegramId, Client client)
+        public static IEnumerable<Request> Find(string time, string start, string finish, string countPerson, Client client)
         {
+
             Repository.SaveUser(client);
-            var newestRequest = Extension.ParseToOrder(time, start, finish, countPerson,telegramId, client);
+            var newestRequest = Extension.ParseToOrder(time, start, finish, countPerson, client);
             Repository.SaveRequest(newestRequest);//добавляем в репозиторий новый заказ
             var comlete = CheckCompleteOrder(newestRequest);//вызываем чекер на набор такси
             if (!comlete.IsComplete)
@@ -162,8 +166,9 @@ namespace Taxi_Algorithm
         public static bool SuitOrders(Request req1, Request req2)
         {
             return req1.DeparturePointId == req2.DeparturePointId
-                && req1.PlaceOfArrivalId == req2.PlaceOfArrivalId
-                && req1.DepartureTime == req2.DepartureTime;
+            && req1.PlaceOfArrivalId == req2.PlaceOfArrivalId
+            && req1.DepartureTime == req2.DepartureTime
+            && req1.Telegram != req2.Telegram;
         }
 
         public static string AroundTime(string time)

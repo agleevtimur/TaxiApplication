@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
 using TaxiBotApp.Models;
 using TaxiBotClassLibrary;
@@ -29,7 +30,7 @@ namespace TaxiBotApp.Controllers
             else
             {
                 if (Bot.InternalCommand != null)
-                    Bot.InternalCommand.Execute(message, client);
+                    Bot.InternalCommand.Execute( message,client);
             }
             return Ok();
         }

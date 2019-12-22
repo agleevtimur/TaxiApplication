@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiBotApp", "TaxiBotApp\Ta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiBotClassLibrary", "TaxiBotClassLibrary\TaxiBotClassLibrary.csproj", "{510231E9-14A7-4F29-965A-DA20774F0E41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{86E8723B-AA1A-49E6-8B27-79D0555E17F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{138B2341-4322-42AF-8E61-386F320721F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "DataBase\DataBase.csproj", "{DDE1EBCF-09D2-462D-BBAC-1ECDD917A1A1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{BCAA7D15-6D3F-42E3-94FF-C8C02494E39E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBase", "..\..\..\Downloads\Telegram Desktop\DataBase\DataBase\DataBase.csproj", "{27412B92-B26E-4A18-8B83-FA95E09B8EA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +25,14 @@ Global
 		{510231E9-14A7-4F29-965A-DA20774F0E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{510231E9-14A7-4F29-965A-DA20774F0E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{510231E9-14A7-4F29-965A-DA20774F0E41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86E8723B-AA1A-49E6-8B27-79D0555E17F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86E8723B-AA1A-49E6-8B27-79D0555E17F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86E8723B-AA1A-49E6-8B27-79D0555E17F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86E8723B-AA1A-49E6-8B27-79D0555E17F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDE1EBCF-09D2-462D-BBAC-1ECDD917A1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDE1EBCF-09D2-462D-BBAC-1ECDD917A1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDE1EBCF-09D2-462D-BBAC-1ECDD917A1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDE1EBCF-09D2-462D-BBAC-1ECDD917A1A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCAA7D15-6D3F-42E3-94FF-C8C02494E39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCAA7D15-6D3F-42E3-94FF-C8C02494E39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCAA7D15-6D3F-42E3-94FF-C8C02494E39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCAA7D15-6D3F-42E3-94FF-C8C02494E39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138B2341-4322-42AF-8E61-386F320721F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138B2341-4322-42AF-8E61-386F320721F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138B2341-4322-42AF-8E61-386F320721F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138B2341-4322-42AF-8E61-386F320721F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27412B92-B26E-4A18-8B83-FA95E09B8EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

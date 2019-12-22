@@ -8,40 +8,21 @@ namespace TaxiBotClassLibrary
     {
         public static void Run()
         {
-            var commands = new List<ICommand>
+            void action(List<ICommand> func, List<State<ICommand>> states)
             {
-                new SetTime() as ICommand, // 0
-                new SetStartPoint() as ICommand, // 1
-                new SetDestination() as ICommand, // 2
-                new SetAmount() as ICommand, // 3
-                new GetFellows() as ICommand // 4
-            };
+                states[0].Transition = new Dictionary<ICommand, State<ICommand>>();// start
 
-            var states = new List<State<ICommand>>()
-            {
-                new State<ICommand>(), // 0 Time
-                new State<ICommand>(), // 1 LocationFrom
-                new State<ICommand>(), // 2 LocationTo
-                new State<ICommand>(),// 3 Amount
-                new State<ICommand>(),// 4 Fellows
-                new State<ICommand>(true) // 5 Finish
-            };
-
-            void action(List<ICommand> func, List<State<ICommand>> statess)
-            {
-                statess[0].Transition = new Dictionary<ICommand, State<ICommand>>();// start
-
-                for (int i = 1; i < statess.Count; i++)
+                for (int i = 1; i < states.Count; i++)
                 {
-                    if (statess[i].IsLastState != true)//состояние finish не может сделать откат или принять какие то данные
+                    if (states[i].IsLastState != true)//состояние finish не может сделать откат или принять какие то данные
                     {
-                        statess[i].Transition = new Dictionary<ICommand, State<ICommand>>();
+                        states[i].Transition = new Dictionary<ICommand, State<ICommand>>();
                     }
-                    statess[i - 1].Transition.Add(func[i - 1], statess[i]);
+                    states[i - 1].Transition.Add(func[i - 1], states[i]);
                 };
             }
 
-            NDFAutomate<ICommand>.DefineNDFAutomate(states, commands, action);
+            NDFAutomate<ICommand>.DefineNDFAutomate(Data<ICommand>.States, Data<ICommand>.Commands, action);
         }
 
         public static void Revoke()
@@ -50,7 +31,7 @@ namespace TaxiBotClassLibrary
         }
     }
 
-    public static class NDFAutomate<T>
+    public class NDFAutomate<T>
     {
         public static List<State<T>> States { get; private set; }
         public static List<T> Functions { get; private set; }

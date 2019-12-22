@@ -19,13 +19,9 @@ namespace Library
                 ))
             {
                 connection.Open();
-                GetConnect = connection;
-                //CreateTable(connection);
-                InsertLocations(connection);
+                CreateTable(connection);
             }
         }
-
-        private static QC.SqlConnection GetConnect;
 
         private static void CreateTable(QC.SqlConnection connection)
         {
@@ -34,18 +30,18 @@ namespace Library
                 command.Connection = connection;
                 command.CommandType = DT.CommandType.Text;
                 command.CommandText = @"  
-CREATE TABLE IF NOT EXISTS Location
+CREATE TABLE Location
 (
     Id SERIAL PRIMARY KEY, 
     NameOfPoint VARCHAR(255) NOT NULL
 );
-CREATE TABLE IF NOT EXISTS User
+CREATE TABLE User
 (
     Id SERIAL PRIMARY KEY, 
     Nickname VARCHAR(100) NOT NULL,
     CountOfTrip INTEGER DEFAULT 0
 );
-CREATE TABLE IF NOT EXISTS Request
+CREATE TABLE Request
 (
     Id SERIAL PRIMARY KEY, 
     DeparturePointId INTEGER,
@@ -56,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Request
     UserId INTEGER REFERENCES User (Id),
     FOREIGN KEY (DeparturePointId, PlaceOfArrivalId) REFERENCES Location (Id)
 );
-CREATE TABLE IF NOT EXISTS HistoryOfRequest
+CREATE TABLE HistoryOfRequest
 (
     Id SERIAL PRIMARY KEY, 
     DeparturePointId INTEGER,
@@ -66,7 +62,7 @@ CREATE TABLE IF NOT EXISTS HistoryOfRequest
     RequestTime DATE,
     UserId INTEGER,
 );
-CREATE TABLE IF NOT EXISTS HistoryOfLocation
+CREATE TABLE HistoryOfLocation
 (
     Id SERIAL PRIMARY KEY, 
     NameOfPoint VARCHAR(255) NOT NULL,
@@ -74,16 +70,14 @@ CREATE TABLE IF NOT EXISTS HistoryOfLocation
     CountOfArrivals INTEGER DEFAULT 0,
 );
 ";
+                InsertLocations(connection);
                 command.ExecuteScalar();
-
             }
         }
 
         private static void InsertLocations(QC.SqlConnection connection)
         {
-            using (var command = new QC.SqlCommand())
-            {
-                var list = new List<string>
+            var list = new List<string>
             {
                 "Деревня Универсиады",
                 "Кремлевская 35А",
@@ -92,89 +86,80 @@ CREATE TABLE IF NOT EXISTS HistoryOfLocation
                 "Кремлевская 16А",
                 "Казанский Кремль",
                 "Пушкина 32А",
-                "Оренkkkбургский тракт 10А",
+                "Оренбургский тракт 10А",
                 "Улица Баумана",
-                "Центр kсемьи Казан",
-                "Национаkkkльный музей Республики Татарстан",
+                "Центр семьи Казан",
+                "Национальный музей Республики Татарстан",
                 "Ак Барс Банк Арена",
-                "Проспекkт Победы 91",
+                "Проспект Победы 91",
                 "Кремлевская 18",
-                "улица Мkkkежлаука",
+                "улица Межлаука",
                 "улица Лево-Булочная",
                 "Бустан",
                 "Карла Маркса 10",
                 "Карла Маркса 68"
             };
+
+            using (var command = new QC.SqlCommand())
+            {
                 command.Connection = connection;
                 command.CommandType = DT.CommandType.Text;
                 var builder = new StringBuilder();
                 for (var i = 0; i < list.Count; i++)
                 {
-                    builder.Append("INSERT INTO Location (Id, NameOfPoint) VALUES (" + i + ",'" + list[i] + "');");//add single quotes
+                    builder.Append("INSERT INTO Location (Id, NameOfPoint) VALUES (" + i + "," + list[i] + ");");
                 }
                 command.CommandText = builder.ToString();
                 command.ExecuteScalar();
                 builder.Clear();
+
                 for (var i = 0; i < list.Count; i++)
                 {
-                    builder.Append("INSERT INTO HistoryOfLocation (Id, NameOfPoint) VALUES (" + i + ",'" + list[i] + "');");
+                    builder.Append("INSERT INTO HistoryOfLocation (Id, NameOfPoint) VALUES (" + i + "," + list[i] + ");");
                 }
                 command.CommandText = builder.ToString();
                 command.ExecuteScalar();
             }
         }
 
-        public void SaveUser(Client user)
+        public void SaveUser(User user)
         {
             using (var connection = new QC.SqlConnection(
                 "Server = tcp:taxibotapp20191219011147dbserver.database.windows.net,1433; Initial Catalog = TaxiBotApp20191219011147_db; Persist Security Info = False; User ID = Timur; Password = 29N05a96r; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"
                 ))
             {
                 connection.Open();
-                //                var commandSelect = new QC.SqlCommand();
-                //                commandSelect.Connection = connection;
-                //                commandSelect.CommandType = DT.CommandType.Text;
-                //                commandSelect.CommandText = @"
-                //SELECT Nickname FROM _User WHERE Nickname = @Nickname;";
-                //                QC.SqlParameter parameterSelect;
-                //                parameterSelect = new QC.SqlParameter("@Nickname", DT.SqlDbType.NVarChar, 100);
-                //                parameterSelect.Value = user.Nickname;
-                //                commandSelect.Parameters.Add(parameterSelect);
-                //                QC.SqlDataReader reader = commandSelect.ExecuteReader();
-                var commandAction = new QC.SqlCommand();
-                commandAction.Connection = connection;
-                commandAction.CommandType = DT.CommandType.Text;
-                //hardcode
-                //if (reader.GetString(0) == null)//new user
-                //{
-
-                commandAction.CommandText = @"  
-INSERT INTO _User
+                var command = new QC.SqlCommand();
+                command.Connection = connection;
+                command.CommandType = DT.CommandType.Text;
+                command.CommandText = @"
+SELECT Nickname FROM User WHERE Nickname = " + user.Nickname ;
+                QC.SqlDataReader reader = command.ExecuteReader();
+                if (reader.GetString(0) == null)
+                {
+                    command.CommandText = @"  
+INSERT INTO User
 (
-    Id, Nickname
+    Nickname
 )
 VALUES  
 (
-   NEXT VALUE FOR serial, @Nickname
+    @Nickname
 ); 
 ";
-                QC.SqlParameter parameterAction;
-                parameterAction = new QC.SqlParameter("@Nickname", DT.SqlDbType.NVarChar, 100);
-                parameterAction.Value = "YADEBIL";
-                commandAction.Parameters.Add(parameterAction);
-                //                }
-                //                else
-                //                {
-                //                    commandAction.CommandText = @"
-                //UPDATE _User
-                //SET CountOfTrip = CountOfTrip + 1,
-                //WHERE Nickname = @Nickname;";
-                //                    QC.SqlParameter parameterAction;
-                //                    parameterAction = new QC.SqlParameter("@Nickname", DT.SqlDbType.NVarChar, 100);
-                //                    parameterAction.Value = user.Nickname;
-                //                    commandAction.Parameters.Add(parameterAction);
-                //                }
-                commandAction.ExecuteScalar();
+                    QC.SqlParameter parameter;
+                    parameter = new QC.SqlParameter("@Nickname", DT.SqlDbType.NVarChar, 100);
+                    parameter.Value = user.Nickname;
+                    command.Parameters.Add(parameter);
+                }
+                else 
+                {
+                    command.CommandText = @"
+UPDATE User
+SET CountOfTrip = CountOfTrip + 1,
+WHERE Nickname = " + user.Nickname + ";";
+                }
+                command.ExecuteScalar();
             }
         }
 
@@ -191,7 +176,6 @@ VALUES
                 command.CommandText = @"  
 INSERT INTO Request 
 (
-    Id
     DeparturePointId,
     PlaceOfArrivalId,
     CountOfPeople,
@@ -201,25 +185,13 @@ INSERT INTO Request
 )
 VALUES  
 (
-NEXT VALUE FOR serialR,
     @DeparturePointId,
     @PlaceOfArrivalId,
     @CountOfPeople,
     @DepartureTime,
     @RequestTime,
     @UserId,  
-);
-
-
-UPDATE HistoryOfLocation
-SET CountOfDepartures = CountOfDepartures + 1,
-AS his
-WHERE EXISTS (SELECT * FROM Request WHERE his.Id = DeparturePointId);
-
-UPDATE HistoryOfLocation
-SET CountOfArrivals = CountOfArrivals + 1,
-AS his
-WHERE EXISTS (SELECT * FROM Request WHERE his.Id = PlaceOfArrivalId);
+); 
 ";
                 QC.SqlParameter parameter;
                 parameter = new QC.SqlParameter("@PlaceOfArrivalId", DT.SqlDbType.Int);
@@ -240,6 +212,18 @@ WHERE EXISTS (SELECT * FROM Request WHERE his.Id = PlaceOfArrivalId);
                 parameter = new QC.SqlParameter("@UserId", DT.SqlDbType.Int);
                 parameter.Value = request.UserId;
                 command.Parameters.Add(parameter);
+                command.CommandText = @"
+UPDATE HistoryOfLocation
+SET CountOfDepartures = CountOfDepartures + 1,
+AS his
+WHERE EXISTS (SELECT * FROM Request WHERE his.Id = DeparturePointId);
+
+UPDATE HistoryOfLocation
+SET CountOfArrivals = CountOfArrivals + 1,
+AS his
+WHERE EXISTS (SELECT * FROM Request WHERE his.Id = PlaceOfArrivalId);
+
+";
                 command.ExecuteScalar();
             }
         }
@@ -266,6 +250,15 @@ SELECT * FROM Request WHERE Id = " + id.ToString() + ";";
                     reader.GetDateTime(5),
                     reader.GetInt32(0),
                     reader.GetInt32(6));
+                //var request = new Request { 
+                //    Id = reader.GetInt32(0),
+                //    DeparturePointId = reader.GetInt32(1),
+                //    PlaceOfArrivalId = reader.GetInt32(2),
+                //    CountOfPeople = reader.GetInt32(3),
+                //    DepartureTime = reader.GetDateTime(4),
+                //    RequestTime = reader.GetDateTime(5),
+                //    UserId = reader.GetInt32(6)
+                //};
                 command.CommandText = @"  
 DELETE FROM Request
 WHERE Id = " + id.ToString() + ";";
@@ -313,7 +306,7 @@ VALUES
                 command.Parameters.Add(parameter);
                 parameter = new QC.SqlParameter("@Id", DT.SqlDbType.Int);
                 parameter.Value = request.Id;
-                command.Parameters.Add(parameter);
+                command.Parameters.Add(parameter);                
                 command.ExecuteScalar();
             }
         }

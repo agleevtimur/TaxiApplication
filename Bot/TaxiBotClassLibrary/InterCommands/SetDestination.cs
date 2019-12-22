@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Taxi_Algorithm;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
@@ -12,21 +13,21 @@ namespace TaxiBotClassLibrary.InterCommands
         {
             
             var id = message.From.Id;
-            if (Check(message))
+            if (Check(message.Text))
             {
                 await client.SendTextMessageAsync(id, "Сколько человек в вашей группе?");
-                var nextState = NDFAutomate<ICommand>.CurrentState.Transition[NDFAutomate<ICommand>.Functions[2]];
-                nextState.Container = message.Text;
-                NDFAutomate<ICommand>.CurrentState = nextState;
+                var next = NDFAutomate<ICommand>.CurrentState.Transition[NDFAutomate<ICommand>.Functions[2]];
+                NDFAutomate<ICommand>.CurrentState = next;
+                Configurator.Values.Add(message.Text);
             }
             else await client.SendTextMessageAsync(id, "Данные неккоретны \nПопробуйте еще раз");
         }
 
-        public bool Check(Message message)
+        public bool Check(string message)
         {
-            if (int.TryParse(message.Text, out int location))
+            if (int.TryParse(message, out int location))
             {
-                return location > 0 && location < 8;
+                return location > 0 && location < Algorithm.GetLocations().Count - 1;
             }
             else return false;
         }

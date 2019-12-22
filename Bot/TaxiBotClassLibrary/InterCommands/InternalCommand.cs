@@ -10,6 +10,6 @@ namespace TaxiBotClassLibrary.InterCommands
     {
         void Execute(Message message, TelegramBotClient client);
 
-        bool Check(Message message);
+        bool Check(string message);
     }
 }

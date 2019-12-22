@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
@@ -11,23 +13,83 @@ namespace TaxiBotClassLibrary.InterCommands
         public async void Execute(Message message, TelegramBotClient client)
         {
             var id = message.From.Id;
-            if (Check(message))
+            if (Check(message.Text))
             {
                 await client.SendTextMessageAsync(id, "Поиск начался!");
-                var nextState = NDFAutomate<ICommand>.CurrentState.Transition[NDFAutomate<ICommand>.Functions[3]];
-                nextState.Container = message.Text;
-                NDFAutomate<ICommand>.CurrentState = nextState;
+                Configurator.Values.Add(message.Text);
+                await client.SendTextMessageAsync(id, Configurator.Values[3]);
+                var data = new List<string>();
+                var user = new DataBase.Classes.Client(message.From.Id, message.From.Username);//TODO Find должен возвращать TelegramId CHECK
+                var t = Taxi_Algorithm.Algorithm.Find(Configurator.Values[0], Configurator.Values[1], Configurator.Values[2], Configurator.Values[3], user);
+                Configurator.Values = new List<string>();
+                if (t == null)
+                    await client.SendTextMessageAsync(id, "Запрос обрабатывается");
+                else
+                    foreach (var mes in t)
+                    {
+                        DataBase.Classes.Request[] arr = { mes };
+                        var otherUsers = t.Except(arr).Select(x =>'@' + x.Nickname);
+                        var builder = new StringBuilder();//3 other users nickname
+                        foreach (var item in otherUsers)
+                        {
+                            builder.Append(item);
+                            if (item != otherUsers.Last())
+                                builder.Append(", ");
+                        }
+                        await client.SendTextMessageAsync(mes.Telegram, builder.ToString());
+                    }
+
             }
             else await client.SendTextMessageAsync(id, "Данные неккоретны \nПопробуйте еще раз");
         }
 
-        public bool Check(Message message)
+        public bool Check(string message)
         {
-            if (int.TryParse(message.Text, out int location))
+            if (int.TryParse(message, out int location))
             {
                 return location > 0 && location < 4;
             }
             else return false;
+        }
+
+        public async Task FindFellows(Message message, TelegramBotClient client)
+        {
+            var id = message.From.Id;
+            var data = new List<string>();
+            if (NDFAutomate<ICommand>.States == null)
+                await client.SendTextMessageAsync(id, "states ==null");
+            foreach (var state in NDFAutomate<ICommand>.States)
+            {
+                if (state != null)
+                {
+                    await client.SendTextMessageAsync(id, state.Container);
+                    data.Add(state.Container);
+                }
+                await client.SendTextMessageAsync(id, "state ==null");
+                
+            }
+            data.Add(message.Text);
+
+            
+            await client.SendTextMessageAsync(id, "Дошел до find");
+            var user = new DataBase.Classes.Client(message.From.Id,message.From.Username);//TODO Find должен возвращать TelegramId CHECK
+            var t = Taxi_Algorithm.Algorithm.Find(data[0], data[1], data[2], data[3], user);
+            if (t == null)
+                await client.SendTextMessageAsync(id, "Запрос обрабатывается");
+            else
+                foreach (var mes in t)
+                {
+                    DataBase.Classes.Request[] arr = { mes };
+                    var otherUsers = t.Except(arr).Select(x => x.Nickname);
+                    var builder = new StringBuilder();//3 other users nickname
+                    foreach (var item in otherUsers)
+                    {
+                        builder.Append(item);
+                        if (item != otherUsers.Last())
+                            builder.Append(", ");
+                    }
+                    await client.SendTextMessageAsync(mes.Telegram, builder.ToString());
+                }
         }
     }
 }

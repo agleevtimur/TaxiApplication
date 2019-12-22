@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataBase\DataBase.csproj" />
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\..\..\..\Downloads\Telegram Desktop\DataBase\DataBase\DataBase.csproj" />
   </ItemGroup>
 
 </Project>

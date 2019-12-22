@@ -10,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
 namespace TaxiBotApp
 {
     public class Startup
@@ -43,8 +42,8 @@ namespace TaxiBotApp
             app.UseHttpsRedirection();
             app.UseMvc();
             //Library.Repository.Start();
-            //DataBase.Initialize.SaveUser1();
-            //DataBase.Initialize.InitialLocation();
+            //Library.Init.Start();
+            DataBase.Initialize.InitialLocation();
             Models.Bot.GetMe().Wait();
         }
     }
