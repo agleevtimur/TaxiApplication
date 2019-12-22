@@ -8,15 +8,14 @@ namespace DataBase.Classes
     // запросы
     public class Request
     {
-        public Request(int departurePointId, int placeOfArrivalId, int countOfPeople, DateTime departureTime, DateTime requestTime, int telegram, string nickname)
+        public Request(int departurePointId, int placeOfArrivalId, int countOfPeople, DateTime departureTime, DateTime requestTime, int clientId)
         {
             DeparturePointId = departurePointId;
             PlaceOfArrivalId = placeOfArrivalId;
             CountOfPeople = countOfPeople;
             DepartureTime = departureTime;
             RequestTime = requestTime;
-            Telegram = telegram;
-            Nickname = nickname;
+            ClientId = clientId;
         }
 
         public int Id { get; set; }
@@ -25,7 +24,6 @@ namespace DataBase.Classes
         public int CountOfPeople { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime RequestTime { get; set; }
-        public int Telegram { get; set; }
-        public string Nickname { get; set; }
+        public int ClientId { get; set; }
     }
 }

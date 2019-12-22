@@ -13,8 +13,7 @@ namespace TaxiBotApp.Models
     {
         static TelegramBotClient client;
         public static IReadOnlyList<Command> Commands => Configurator.GetCommands().AsReadOnly();
-        public static ICommand InternalCommand => Configurator.CurrentInternCommand;
-                                                                            
+        public static ICommand InternalCommands => Configurator.CurrentInterCommand;                                                                         
         public static async Task<TelegramBotClient> GetMe()
         {
             if (client != null)

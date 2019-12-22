@@ -8,21 +8,7 @@ namespace TaxiBotClassLibrary
     {
         public static void Run()
         {
-            void action(List<ICommand> func, List<State<ICommand>> states)
-            {
-                states[0].Transition = new Dictionary<ICommand, State<ICommand>>();// start
-
-                for (int i = 1; i < states.Count; i++)
-                {
-                    if (states[i].IsLastState != true)//состояние finish не может сделать откат или принять какие то данные
-                    {
-                        states[i].Transition = new Dictionary<ICommand, State<ICommand>>();
-                    }
-                    states[i - 1].Transition.Add(func[i - 1], states[i]);
-                };
-            }
-
-            NDFAutomate<ICommand>.DefineNDFAutomate(Data<ICommand>.States, Data<ICommand>.Commands, action);
+            NDFAutomate<ICommand>.DefineNDFAutomate(Data<ICommand>.States, Data<ICommand>.Commands, Data<ICommand>.View);
         }
 
         public static void Revoke()
@@ -47,8 +33,10 @@ namespace TaxiBotClassLibrary
 
         public static void DropNDFAutomate()
         {
-            CurrentState = States[0];
+            States = null;
+            Functions = null;
         }
+
         public static State<T> CurrentState { get; set; }
     }
 
@@ -56,8 +44,11 @@ namespace TaxiBotClassLibrary
     {
         public Dictionary<T, State<T>> Transition { get; set; }
         public bool IsLastState { get; }
-        public State( bool isLast = false)
+
+        public string Name { get; }
+        public State(string name, bool isLast = false)
         {
+            Name = name;
             IsLastState = isLast;
         }
 

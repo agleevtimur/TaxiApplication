@@ -10,23 +10,23 @@ namespace Taxi_Algorithm
 {
     public static class Extension
     {
-        public static Request ParseToOrder(string time, string start, string finish, string countPerson, Client client)//возвращаем ордер из сообщения cmdFind
+        public static Request ParseToOrder(string time, string start, string finish, string countPerson, int clientId)//возвращаем ордер из сообщения cmdFind
         {
-            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, client.Telegram, client.Nickname);
+            return new Request(int.Parse(start), int.Parse(finish), int.Parse(countPerson), AroundTime(time), DateTime.Now, clientId);
         }
 
-        public static DateTime AroundTime(string time)
+        private static DateTime AroundTime(string time)
         {
             var today = DateTime.Now;
             var split = time.Split(':', '.', ',', ';');//возможный парсинг строки со временем
             var hours = int.Parse(split[0]);
             var minutes = int.Parse(split[1]);
-            var aroundMinutes = (minutes / 5) * 5;
+            var aroundMinutes = (minutes / 10) * 10;
             var date = new DateTime(today.Year, today.Month, GetDay(hours, minutes), hours, aroundMinutes, 0);
             return date;
         }
 
-        public static int GetDay(int hours, int minutes)
+        private static int GetDay(int hours, int minutes)
         {
             var totalM = minutes + 60 * hours;
             var today = DateTime.Now;
@@ -42,7 +42,7 @@ namespace Taxi_Algorithm
 
     }
 
-    public class Complete
+    class Complete
     {
         public readonly bool IsComplete;
         public readonly List<Request> enumReqs;
@@ -53,18 +53,17 @@ namespace Taxi_Algorithm
             enumReqs = completeOrders;
         }
 
-        public static Complete Orders3(IEnumerable<Request> suitedOrders, Request newestOrder)//ищем первую единицу
+        static Complete Orders3(IEnumerable<Request> suitedOrders, Request newestOrder)//ищем первую единицу
         {
-            var order1first = suitedOrders.Where(x => x.CountOfPeople == 1).FirstOrDefault();
-            if (order1first == null) return Empty;
+            var order1first = GetFirstRequest(suitedOrders, 1);
+            if (order1first == null) return Empty;//ищем одну единицу
             return new Complete(true, new List<Request> { newestOrder, order1first });
         }
 
-        public static Complete Orders2(IEnumerable<Request> suitedOrders, Request newestOrder)
+        static Complete Orders2(IEnumerable<Request> suitedOrders, Request newestOrder)
         {
-            var completeOrders = new List<Request>();
-            completeOrders.Add(newestOrder);
-            var order2first = suitedOrders.Where(x => x.CountOfPeople == 2).FirstOrDefault();
+            var completeOrders = new List<Request> { newestOrder };
+            var order2first = GetFirstRequest(suitedOrders, 2);
             if (order2first != null)//сначала к двум пытаемся найти еще два
             {
                 completeOrders.Add(order2first);
@@ -79,32 +78,35 @@ namespace Taxi_Algorithm
             return Empty;//если двух единиц нет
         }
 
-
-        public static Complete Orders1(IEnumerable<Request> suitedOrders, Request newestOrder)
+        private static Request GetFirstRequest(IEnumerable<Request> requests, int countOfPeople)
         {
-            var completeOrders = new List<Request>();
-            completeOrders.Add(newestOrder);
-            var order3first = suitedOrders.Where(x => x.CountOfPeople == 3).FirstOrDefault();
+            return requests.FirstOrDefault(x => x.CountOfPeople == countOfPeople);
+        }
+
+        static Complete Orders1(IEnumerable<Request> suitedOrders, Request newestOrder)
+        {
+            var completeOrders = new List<Request> { newestOrder };
+            var order3first = GetFirstRequest(suitedOrders, 3);
             if (order3first != null)//ищем одну тройку
             {
                 completeOrders.Add(order3first);
                 return new Complete(true, completeOrders);
             }
-            var order2first = suitedOrders.Where(x => x.CountOfPeople == 2).FirstOrDefault();
-            if (order2first != null)//иначе ищем одну двойку и одну единицу
+            var req2First = GetFirstRequest(suitedOrders, 2);
+            if (req2First != null)//иначе ищем одну двойку и одну единицу
             {
-                var order1first = suitedOrders.Where(x => x.CountOfPeople == 1).FirstOrDefault();
-                if (order1first != null)
+                var req1First = GetFirstRequest(suitedOrders, 1);
+                if (req1First != null)
                 {
-                    completeOrders.Add(order2first);
-                    completeOrders.Add(order1first);
+                    completeOrders.Add(req2First);
+                    completeOrders.Add(req1First);
                     return new Complete(true, completeOrders);
                 }
-            }//вопрос с елсе
-            var order1count = suitedOrders.Where(x => x.CountOfPeople == 1);
-            if (order1count.Count() >= 3)//ищем три и более единицы
+            }
+            var req1Many = suitedOrders.Where(x => x.CountOfPeople == 1);
+            if (req1Many.Count() >= 3)//ищем три и более единицы
             {
-                completeOrders.AddRange(order1count.Take(3));
+                completeOrders.AddRange(req1Many.Take(3));
                 return new Complete(true, completeOrders);
             }
             return Empty;
@@ -112,8 +114,6 @@ namespace Taxi_Algorithm
 
         public static Complete TryComplete(int count, IEnumerable<Request> suitedOrders, Request newestOrder)
         {
-            var completeOrders = new List<Request>();
-            completeOrders.Add(newestOrder);
             switch (count)
             {
                 case 1://ищем сначала 3, потом 2 1, потом 1 1 1
@@ -131,31 +131,49 @@ namespace Taxi_Algorithm
 
     public static class Algorithm
     {
-        public static IRepository Repository = new Repository();
+        private static IRepository Repository = new Repository();
 
-        public static IEnumerable<Request> Find(string time, string start, string finish, string countPerson, Client client)
+        public static IEnumerable<Client> Find(string time, string start, string finish, string countPerson, Client client)
         {
-
-            Repository.SaveUser(client);
-            var newestRequest = Extension.ParseToOrder(time, start, finish, countPerson, client);
-            Repository.SaveRequest(newestRequest);//добавляем в репозиторий новый заказ
-            var comlete = CheckCompleteOrder(newestRequest);//вызываем чекер на набор такси
-            if (!comlete.IsComplete)
+            DeleteOldRequests();
+            var idClient = Repository.SaveUser(client);//сохраняем нового пользователя, либо обновляем его данные
+            var newRequest = Extension.ParseToOrder(time, start, finish, countPerson, idClient);//собираем из данных реквест
+            Repository.SaveRequest(newRequest);//добавляем в репозиторий новый заказ,получаем Id для заказа
+            var comlete = AggregateComplete(newRequest);//вызываем чекер на набор такси, возвращает класс Complete
+            if (!comlete.IsComplete)//если такси не собрано, возвращаем null
                 return null;
-            var reqs = comlete.enumReqs;
-            foreach (var req in reqs)
-            {
-                Repository.DeleteRequest(req.Id);
-            }
-            return reqs;
+            var reqs = comlete.enumReqs;//иначе возвращаем список собранных заказов
+            reqs.ForEach(x => Repository.DeleteCompletedRequest(x.Id));//и удаляем данные реквесты из таблицы, обновляем значения таблиц HistoryOfLocation(логика репозитория)
+            return reqs.Select(x => Repository.GetUser(x.ClientId));
         }
 
-        public static List<Location> GetLocations()
+        public static State GetState(int id)
+        {
+            return Repository.GetState(id);
+        }
+
+        public static void SaveState(State state)
+        {
+            Repository.SaveState(state);
+        }
+        public static List<Location> GetLocations()//для команды /locations
         {
             return Repository.GetLocations();
         }
 
-        public static Complete CheckCompleteOrder(Request newestRequest)//здесь должна проходить агрегация заказов, должны собираться и все
+        private static void DeleteOldRequests()
+        {
+            var allReqs = Repository.GetRequests();
+            allReqs.ForEach(x =>
+            {
+                if (x.DepartureTime < DateTime.Now)
+                {
+                    Repository.DeleteRequest(x.Id);
+                }
+            });
+        }
+
+        private static Complete AggregateComplete(Request newestRequest)//здесь проходит агрегация заказов, попытка собрать группу попутчиков
         {
             var suitedOrders = Repository.GetRequests().Where(x => SuitOrders(x, newestRequest));
             var count = newestRequest.CountOfPeople;
@@ -163,30 +181,12 @@ namespace Taxi_Algorithm
             return complete;
         }
 
-        public static bool SuitOrders(Request req1, Request req2)
+        private static bool SuitOrders(Request req1, Request req2)//предикат для поиска похожих заказов
         {
             return req1.DeparturePointId == req2.DeparturePointId
             && req1.PlaceOfArrivalId == req2.PlaceOfArrivalId
             && req1.DepartureTime == req2.DepartureTime
-            && req1.Telegram != req2.Telegram;
+            && req1.ClientId != req2.ClientId;
         }
-
-        public static string AroundTime(string time)
-        {
-            var today = DateTime.Today;
-            var array = time.Split(':', '.', ',', ';');//возможный парсинг строки со временем
-            var hours = int.Parse(array[0]);
-            var minutes = int.Parse(array[1]);
-            var aroundMinutes = (minutes / 5) * 5;
-            var date = new DateTime(today.Year, today.Month, today.Day, hours, aroundMinutes, 0);
-            return date.ToString();
-        }
-
-        public static int ParseCountPerson(string countPerson)
-        {
-            return int.Parse(countPerson);
-        }
-
-
     }
 }

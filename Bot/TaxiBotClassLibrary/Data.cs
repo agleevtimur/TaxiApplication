@@ -13,16 +13,17 @@ namespace TaxiBotClassLibrary
                 new SetTime() as T, // 0
                 new SetStartPoint() as T, // 1
                 new SetDestination() as T, // 2
-                new SetAmount() as T // 3
+                new SetAmount() as T
+                
             };
 
         public static readonly List<State<T>> States = new List<State<T>>()
             {
-                new State<T>(),// 0 start
-                new State<T>(), // 1 Time
-                new State<T>(), // 2 LocationFrom
-                new State<T>(), // 3 LocationTo
-                new State<T>(true) // 4 Awaiting
+                new State<T>("start"),// 0 start
+                new State<T>("otkuda"), // 1 Time
+                new State<T>("kuda"), // 2 LocationFrom
+                new State<T>("skolko"),
+                new State<T>("zhdite", true) // 3 Awaiting
             };
 
         public static void View(List<ICommand> func, List<State<ICommand>> statess)
@@ -38,5 +39,7 @@ namespace TaxiBotClassLibrary
                 statess[i - 1].Transition.Add(func[i - 1], statess[i]);
             };
         }
+
+       
     }
 }

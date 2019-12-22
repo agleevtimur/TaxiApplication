@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase.Classes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TaxiBotClassLibrary.InterCommands;
@@ -14,8 +15,12 @@ namespace TaxiBotClassLibrary.Commands
         public override async void Execute(Message message, TelegramBotClient client)
         {
             var id = message.From.Id;
-            StateMachine.Revoke();
-            await client.SendTextMessageAsync(id, "Вы прекратили поиск");
+            
+            Configurator.Values = new List<string>();
+            
+            
+            StateMachine.Revoke()
+;            await client.SendTextMessageAsync(id, "Вы прекратили поиск");
         }
     }
 }

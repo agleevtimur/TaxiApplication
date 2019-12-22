@@ -6,6 +6,8 @@ using System.Text;
 using TaxiBotClassLibrary.InterCommands;
 using TaxiBotClassLibrary.Commands;
 using Telegram.Bot.Types;
+using DataBase.Classes;
+using DataBase.Repository;
 
 namespace TaxiBotClassLibrary
 {
@@ -23,8 +25,6 @@ namespace TaxiBotClassLibrary
 
         public static List<string> Values = new List<string>();
 
-        public static ICommand CurrentInternCommand { get; } = NDFAutomate<ICommand>.CurrentState.Transition.FirstOrDefault().Key;
-
-        //public static Dictionary<int, State<ICommand>> Role = new Dictionary<int, State<ICommand>>();
+        public static ICommand CurrentInterCommand => NDFAutomate<ICommand>.CurrentState.Transition.FirstOrDefault().Key;
     }
 }

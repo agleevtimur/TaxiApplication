@@ -10,26 +10,26 @@ namespace TaxiBotClassLibrary.InterCommands
 {
     class SetAmount: ICommand
     {
-        public async void Execute(Message message, TelegramBotClient client)
+        public async void Execute(Message message, TelegramBotClient Tclient)
         {
             var id = message.From.Id;
             if (Check(message.Text))
             {
-                await client.SendTextMessageAsync(id, "Поиск начался!");
+                await Tclient.SendTextMessageAsync(id, "Поиск начался!");
                 Configurator.Values.Add(message.Text);
 
-                var data = new List<string>();
+                await Tclient.SendTextMessageAsync(id, $"{Configurator.Values[0]} + {Configurator.Values[1]} + {Configurator.Values[2]} + {Configurator.Values[3]}") ;
                 var user = new DataBase.Classes.Client(message.From.Id, message.From.Username);//TODO Find должен возвращать TelegramId CHECK
-                var t = Taxi_Algorithm.Algorithm.Find(Configurator.Values[0], Configurator.Values[1], Configurator.Values[2], Configurator.Values[3], user);
+                var clientsCompleted = Taxi_Algorithm.Algorithm.Find(Configurator.Values[0], Configurator.Values[1], Configurator.Values[2], Configurator.Values[3], user);
                 Configurator.Values = new List<string>();
 
-                if (t == null)
-                    await client.SendTextMessageAsync(id, "Запрос обрабатывается");
+                if (clientsCompleted == null)
+                    await Tclient.SendTextMessageAsync(id, "Запрос обрабатывается");
                 else
-                    foreach (var mes in t)
+                    foreach (var client in clientsCompleted)
                     {
-                        DataBase.Classes.Request[] arr = { mes };
-                        var otherUsers = t.Except(arr).Select(x =>'@' + x.Nickname);
+                        DataBase.Classes.Client[] arr = { client};
+                        var otherUsers = clientsCompleted.Except(arr).Select(x =>'@' + x.Nickname);
                         var builder = new StringBuilder();//3 other users nickname
                         foreach (var item in otherUsers)
                         {
@@ -37,11 +37,15 @@ namespace TaxiBotClassLibrary.InterCommands
                             if (item != otherUsers.Last())
                                 builder.Append(", ");
                         }
-                        await client.SendTextMessageAsync(mes.Telegram, builder.ToString());
+                        await Tclient.SendTextMessageAsync(client.Telegram, builder.ToString());
+                        
                     }
+                StateMachine.Revoke();
+                //Configurator.Dict[id] = NDFAutomate<ICommand>.States[0];
+                
 
             }
-            else await client.SendTextMessageAsync(id, "Данные неккоретны \nПопробуйте еще раз");
+            else await Tclient.SendTextMessageAsync(id, "Данные неккоретны \nПопробуйте еще раз");
         }
 
         public bool Check(string message)
