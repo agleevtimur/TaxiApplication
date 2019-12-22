@@ -25,7 +25,6 @@
       "TaxiBotApp/1.0.0": {
         "dependencies": {
           "Controller": "1.0.0",
-          "DataBase": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
@@ -106,7 +105,6 @@
       "TaxiBotClassLibrary/1.0.0": {
         "dependencies": {
           "Controller": "1.0.0",
-          "DataBase": "1.0.0",
           "Telegram.Bot": "15.0.0"
         },
         "runtime": {

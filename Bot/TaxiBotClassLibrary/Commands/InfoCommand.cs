@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
 
 namespace TaxiBotClassLibrary.Commands
 {
@@ -12,7 +13,7 @@ namespace TaxiBotClassLibrary.Commands
 
         public override async void Execute(Message message, TelegramBotClient client)
         {
-            var id = message.From.Id;
+            var id = message.Chat.Id;
             var info = Taxi_Algorithm.Algorithm.GetLocations();
             var locations = new StringBuilder();
             foreach (var location in info)

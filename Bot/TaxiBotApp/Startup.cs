@@ -43,7 +43,7 @@ namespace TaxiBotApp
             app.UseMvc();
             //Library.Repository.Start();
             //Library.Init.Start();
-            DataBase.Initialize.InitialLocation();
+           // DataBase.Initialize.InitialLocation();
             Models.Bot.GetMe().Wait();
         }
     }

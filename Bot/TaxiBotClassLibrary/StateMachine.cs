@@ -47,9 +47,7 @@ namespace TaxiBotClassLibrary
 
         public static void DropNDFAutomate()
         {
-            NDFAutomate<ICommand>.Functions = null;
-            NDFAutomate<ICommand>.States = null;
-            NDFAutomate<ICommand>.CurrentState = null;
+            CurrentState = States[0];
         }
         public static State<T> CurrentState { get; set; }
     }
@@ -58,8 +56,6 @@ namespace TaxiBotClassLibrary
     {
         public Dictionary<T, State<T>> Transition { get; set; }
         public bool IsLastState { get; }
-        public string Container { get; set; }
-
         public State( bool isLast = false)
         {
             IsLastState = isLast;
