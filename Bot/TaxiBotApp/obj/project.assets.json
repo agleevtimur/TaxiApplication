@@ -4394,12 +4394,38 @@
           "lib/netstandard1.1/Telegram.Bot.dll": {}
         }
       },
+      "Controller/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "DataBase": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Controller.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Controller.dll": {}
+        }
+      },
+      "DataBase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.1.0"
+        },
+        "compile": {
+          "bin/placeholder/DataBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataBase.dll": {}
+        }
+      },
       "TaxiBotClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "C:\\Users\\fanto\\OneDrive\\Desktop\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj": "1.0.0",
-          "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj": "1.0.0",
+          "Controller": "1.0.0",
+          "DataBase": "1.0.0",
           "Telegram.Bot": "15.0.0"
         },
         "compile": {
@@ -11998,6 +12024,16 @@
         "telegram.bot.nuspec"
       ]
     },
+    "Controller/1.0.0": {
+      "type": "project",
+      "path": "../Controller/Controller.csproj",
+      "msbuildProject": "../Controller/Controller.csproj"
+    },
+    "DataBase/1.0.0": {
+      "type": "project",
+      "path": "../../../../Downloads/Telegram Desktop/DataBase/DataBase/DataBase.csproj",
+      "msbuildProject": "../../../../Downloads/Telegram Desktop/DataBase/DataBase/DataBase.csproj"
+    },
     "TaxiBotClassLibrary/1.0.0": {
       "type": "project",
       "path": "../TaxiBotClassLibrary/TaxiBotClassLibrary.csproj",
@@ -12006,8 +12042,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "C:\\Users\\fanto\\OneDrive\\Desktop\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj",
-      "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj",
+      "Controller >= 1.0.0",
+      "DataBase >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12022,11 +12058,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotApp\\TaxiBotApp.csproj",
+      "projectUniqueName": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotApp\\TaxiBotApp.csproj",
       "projectName": "TaxiBotApp",
-      "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotApp\\TaxiBotApp.csproj",
+      "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotApp\\TaxiBotApp.csproj",
       "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotApp\\obj\\",
+      "outputPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12045,14 +12081,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\fanto\\OneDrive\\Desktop\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj"
+            "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj": {
+              "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj"
             },
-            "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj": {
-              "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj"
+            "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj"
             },
-            "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj": {
-              "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj"
+            "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj"
             }
           }
         }
@@ -12101,25 +12137,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Не удалось найти сведения о проекте для \"C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj\". Если вы используете Visual Studio, причина может заключаться в том, что проект выгружен или не является частью текущего решения. В этом случае выполните восстановление из командной строки. В противном случае причина может быть связана с тем, что файл проекта является недопустимым или отсутствуют целевые объекты, необходимые для восстановления.",
-      "libraryId": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    },
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Не удалось найти проект \"C:\\Users\\fanto\\OneDrive\\Desktop\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
-      "libraryId": "C:\\Users\\fanto\\OneDrive\\Desktop\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.1"
-      ]
-    }
-  ]
+  }
 }

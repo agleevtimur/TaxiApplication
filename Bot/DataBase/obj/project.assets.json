@@ -3490,11 +3490,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj",
+      "projectUniqueName": "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj",
       "projectName": "DataBase",
-      "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj",
+      "projectPath": "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\DataBase.csproj",
       "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\obj\\",
+      "outputPath": "C:\\Users\\fanto\\Downloads\\Telegram Desktop\\DataBase\\DataBase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

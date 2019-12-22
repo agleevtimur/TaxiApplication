@@ -7,78 +7,59 @@ namespace DataBase.Repository
 {
     public class Repository : IRepository
     {
-        public void SaveUser(User user)
+        private static ApplicationContext db = new ApplicationContext();
+        public void SaveUser(Client client)
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
                 var isInUsers = false;
-                foreach (User us in db.User)
-                    if (us.Nickname == user.Nickname)
+                foreach (Client cl in db.Client)
+                    if (cl.Nickname == client.Nickname)
                     {
                         isInUsers = true;
-                        us.CountOfTrip++;
+                        cl.CountOfTrip++;
                         break;
                     }
                 if (isInUsers == false)
-                    db.User.Add(user);
+                {
+                    client.CountOfTrip++;
+                    db.Client.Add(client);
+                }
                 db.SaveChanges();
-            }
         }
 
         public void SaveRequest(Request request)
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
                 db.Request.Add(request);
                 db.HistoryOfLocation.Find(request.DeparturePointId).CountOfDepartures++;
                 db.HistoryOfLocation.Find(request.PlaceOfArrivalId).CountOfArrivals++;
                 db.SaveChanges();
-            }
         }
 
         public void DeleteRequest(int id)
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
-                var request = db.Request.Find(id);
-                db.Request.Remove(request);
+                var req = db.Request.Find(id);
+                db.Request.Remove(req);
                 db.HistoryOfRequest.Add(
-                    new HistoryOfRequest
-                    {
-                        Id = request.Id,
-                        CountOfPeople = request.CountOfPeople,
-                        DeparturePointId = request.DeparturePointId,
-                        PlaceOfArrivalId = request.PlaceOfArrivalId,
-                        DepartureTime = request.DepartureTime,
-                        RequestTime = request.RequestTime,
-                        UserId = request.UserId
-                    });
+                    new HistoryOfRequest(req.DeparturePointId, req.PlaceOfArrivalId, req.CountOfPeople, req.DepartureTime, req.RequestTime, req.Telegram, req.Nickname)
+                    ); 
                 db.SaveChanges();
-            }
         }
 
         public List<Location> GetLocations()
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
                 var list = new List<Location>();
                 var locations = db.Location;
-                foreach (Location location in locations)
+                foreach (var location in locations)
                     list.Add(location);
                 return list;
-            }
         }
 
         public List<Request> GetRequests()
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
                 var list = new List<Request>();
                 var requests = db.Request;
                 foreach (Request request in requests)
                     list.Add(request);
                 return list;
-            }
         }
     }
 }

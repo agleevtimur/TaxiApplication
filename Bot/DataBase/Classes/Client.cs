@@ -16,9 +16,7 @@ namespace DataBase.Classes
         public int Id { get; set; }
         public string Nickname { get; set; }
         public int CountOfTrip { get; set; }
-
         public int Telegram { get; set; }
-    }
 
-    
+    }
 }

@@ -7,7 +7,7 @@ namespace DataBase.Repository
 {
     public interface IRepository
     {
-        void SaveUser(User user);
+        void SaveUser(Client user);
         void SaveRequest(Request request);
         void DeleteRequest(int id);
         List<Location> GetLocations();
