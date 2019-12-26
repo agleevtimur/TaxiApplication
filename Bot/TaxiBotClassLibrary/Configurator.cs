@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using TaxiBotClassLibrary.InterCommands;
 using TaxiBotClassLibrary.Commands;
 using Telegram.Bot.Types;
-using DataBase.Classes;
 using DataBase.Repository;
+using TaxiBotClassLibrary.States;
 
 namespace TaxiBotClassLibrary
 {
     public static class Configurator
     {
         public static List<Command> GetCommands()
-        {
+        {// глобальные комманды
             var list = new List<Command>();
             var baseType = typeof(Command);
             var heirs = Assembly.GetAssembly(baseType).GetTypes().Where(c => c.IsSubclassOf(baseType));
@@ -23,8 +22,7 @@ namespace TaxiBotClassLibrary
             return list;
         }
 
-        public static List<string> Values = new List<string>();
-
-        public static ICommand CurrentInterCommand => NDFAutomate<ICommand>.CurrentState.Transition.FirstOrDefault().Key;
+        // в этом словаре храняться пользователи и их контекст, содержащий конкретное состояние ссылку на след и метод обработки
+        public static Dictionary<int, Context> Dictionary = new Dictionary<int, Context>();
     }
 }

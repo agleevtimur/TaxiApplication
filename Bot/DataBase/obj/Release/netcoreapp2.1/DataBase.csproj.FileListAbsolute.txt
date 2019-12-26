@@ -27,3 +27,4 @@ C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp2.1
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp2.1\DataBase.AssemblyInfo.cs
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp2.1\DataBase.dll
 C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp2.1\DataBase.pdb
+C:\Users\fanto\Desktop\telegramBot\TaxiBotApp\DataBase\obj\Release\netcoreapp2.1\DataBase.csprojAssemblyReference.cache
