@@ -18,7 +18,7 @@ namespace DataBase
         // создать пользователя project в SQL Shell с паролем project
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:dbserver2213.database.windows.net,1433;Initial Catalog=db1;Persist Security Info=False;User ID=timur;Password=29N05a96r;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("Server=tcp:dbserver2213.database.windows.net,1433;Initial Catalog=dbR;Persist Security Info=False;User ID=timur;Password=29N05a96r;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
 

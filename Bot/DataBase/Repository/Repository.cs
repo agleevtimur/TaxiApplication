@@ -1,5 +1,6 @@
 ﻿using DataBase.Classes;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace DataBase.Repository
@@ -38,25 +39,35 @@ namespace DataBase.Repository
 
             throw new ArgumentException();
         }
+        
+        public void UpdateUser(Client client   )
+        {
+            var clientInRep = db.Client.Where(x => x.Nickname == client.Nickname).FirstOrDefault();
+            if(clientInRep==null)
+            {
+                //
+            }
+            else
+            {
+                clientInRep.CountOfTrip++;
+                db.SaveChanges();
+            }
+        }
         public int SaveUser(Client client)
         {
             var id = 0;
-            var isInUsers = false;
-            foreach (Client cl in db.Client)
-                if (cl.Nickname == client.Nickname)
-                {
-                    isInUsers = true;
-                    cl.CountOfTrip++;
-                    id= cl.Id;
-                    break;
-                }
-            if (isInUsers == false)
+            var clientInRep = db.Client.Where(x => x.Nickname == client.Nickname).FirstOrDefault();
+            if (clientInRep == null)//db dosnt contain client
             {
-                client.CountOfTrip++;
                 db.Client.Add(client);
-                id =client.Id;
+                db.SaveChanges();
+                return  client.Id;
             }
-            db.SaveChanges();
+            else
+            {
+                id = clientInRep.Id;
+                db.SaveChanges();
+            }
             return id;
         }
 
@@ -83,6 +94,12 @@ namespace DataBase.Repository
             var req = db.Request.Find(id);
             db.Request.Remove(req);
             db.SaveChanges();
+        }
+
+        public IEnumerable<Request> GetRequestByClientId(int id)
+        {
+            var reqs = db.Request.Where(x => x.ClientId == id);
+            return reqs;
         }
 
         public List<Location> GetLocations()

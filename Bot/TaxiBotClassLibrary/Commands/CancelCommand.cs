@@ -11,6 +11,7 @@ namespace TaxiBotClassLibrary.Commands
         public override async void Execute(Message message, TelegramBotClient client)
         {
             var id = message.From.Id;
+            Taxi_Algorithm.Algorithm.DeleteCanceledRequest(new DataBase.Classes.Client(message.From.Id, message.From.Username));
             if (Configurator.Dictionary.ContainsKey(id))
                 Configurator.Dictionary[id] = null;// обнуляем
             await client.SendTextMessageAsync(id, "Вы прекратили поиск");

@@ -9,6 +9,8 @@ namespace DataBase.Repository
     {
         Client GetUser(int id);
         int SaveUser(Client user);
+        void UpdateUser(Client client);
+        IEnumerable<Request> GetRequestByClientId(int id);
         void SaveRequest(Request request);
         void DeleteRequest(int id);
         void DeleteCompletedRequest(int id);

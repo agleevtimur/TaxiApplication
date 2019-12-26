@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
@@ -13,7 +14,6 @@ namespace TaxiBotClassLibrary.States
             var id = message.From.Id;
             if (Check(message.Text))
             {
-                await Tclient.SendTextMessageAsync(id, $"Поиск начался!");
                 Configurator.Dictionary[id].Values[3] = message.Text;
                 var values = Configurator.Dictionary[id].Values;
 

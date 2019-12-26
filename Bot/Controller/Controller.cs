@@ -137,6 +137,7 @@ namespace Taxi_Algorithm
         {
             DeleteOldRequests();
             var idClient = Repository.SaveUser(client);//сохраняем нового пользователя, либо обновляем его данные
+            Repository.UpdateUser(client);
             var newRequest = Extension.ParseToOrder(time, start, finish, countPerson, idClient);//собираем из данных реквест
             Repository.SaveRequest(newRequest);//добавляем в репозиторий новый заказ,получаем Id для заказа
             var comlete = AggregateComplete(newRequest);//вызываем чекер на набор такси, возвращает класс Complete
@@ -171,6 +172,14 @@ namespace Taxi_Algorithm
                     Repository.DeleteRequest(x.Id);
                 }
             });
+        }
+
+        public static void DeleteCanceledRequest(Client client)
+        {
+            var id = Repository.SaveUser(client);
+            var reqs = Repository.GetRequestByClientId(id);
+            foreach (var req in reqs)
+                Repository.DeleteRequest(req.Id);
         }
 
         private static Complete AggregateComplete(Request newestRequest)//здесь проходит агрегация заказов, попытка собрать группу попутчиков
