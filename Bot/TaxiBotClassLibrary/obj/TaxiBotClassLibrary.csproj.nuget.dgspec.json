@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj": {}
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj": {
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj",
+        "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj",
         "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\obj\\",
+        "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj": {
-                "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj"
+              "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj": {
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\DataBase.csproj",
+        "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\DataBase.csproj",
         "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\DataBase\\obj\\",
+        "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj": {
+    "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj",
         "projectName": "TaxiBotClassLibrary",
-        "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj",
+        "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\TaxiBotClassLibrary.csproj",
         "packagesPath": "C:\\Users\\fanto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\TaxiBotClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\TaxiBotClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -154,8 +154,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj": {
-                "projectPath": "C:\\Users\\fanto\\Desktop\\telegramBot\\TaxiBotApp\\Controller\\Controller.csproj"
+              "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\fanto\\OneDrive\\Desktop\\TaxiApplication\\TaxiApplication\\Bot\\Controller\\Controller.csproj"
               }
             }
           }
